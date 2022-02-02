@@ -1,5 +1,3 @@
-import Phaser, { Physics } from "phaser";
-import Unit, { enemies } from "../enemies";
 
 export default class Preloader extends Phaser.Scene {
     constructor() {
@@ -8,42 +6,54 @@ export default class Preloader extends Phaser.Scene {
 
     preload() {
 
-        this.load.tilemapTiledJSON("overworld", "tilemaps/overworld.json");
-        this.load.image("Grass", "tilesets/grass/grass.png")
-        this.load.image("GrassLand", "tilesets/grass/GrassLand.png")
-        this.load.image("GrassCoast", "tilesets/grass/GrassCoast.png")
+        this.load.tilemapTiledJSON("cemetery", "tilemaps/world2.json")
+        this.load.image("wall1", "tilesets/cemetery/Tilesets/tileset-wall1.png")
+        this.load.image("terrain", "tilesets/cemetery/Tilesets/Tileset-Terrain.png")
+        this.load.image("props", "tilesets/cemetery/Tilesets/Tileset-Props.png")
+        this.load.image("whole", "tilesets/cemetery/Tilesets/tileset-whole.png")
+        this.load.image("whole2", "tilesets/cemetery/Tilesets/tileset-whole2.png")
+        this.load.image("whole3", "tilesets/cemetery/Tilesets/tileset-whole-dirt.png")
 
-        this.load.image("Cave", "tilesets/cave/cave.png")
-        this.load.image("CaveLand", "tilesets/cave/CaveLand.png")
-        this.load.image("CaveRock", "tilesets/cave/CaveRock.png")
-
-        this.load.image("treesmountains", "tilesets/treesmountains.png")
-        this.load.image("allbuildingtileset", "tilesets/allbuildingtileset.png")
-
-        this.load.image("Dirt", "tilesets/dirt/dirt.png")
-        this.load.image("DirtLand", "tilesets/dirt/DirtLand.png")
-        this.load.image("DirtRock", "tilesets/dirt/DirtRock.png")
-
-        this.load.image("Ice", "tilesets/ice/ice.png")
-        this.load.image("IceLand", "tilesets/ice/IceLand.png")
-        this.load.image("IceCoast", "tilesets/ice/IceCoast.png")
-
-        this.load.image("Lava", "tilesets/lava/lava.png")
-        this.load.image("LavaLand", "tilesets/lava/LavaLand.png")
-        this.load.image("LavaCoast", "tilesets/lava/LavaCoast.png")
-
-        this.load.image("Marsh", "tilesets/marsh/marsh.png")
-        this.load.image("MarshLand", "tilesets/marsh/MarshLand.png")
-        this.load.image("MarshCoast", "tilesets/marsh/MarshCoast.png")
-
-        this.load.image("OceanAnimated", "tilesets/ocean/OceanAnimated.png")
-        this.load.image("RiverAnimated", "tilesets/ocean/RiverAnimated.png")
-
-        this.load.image("roads", "tilesets/roads.png")
-        this.load.image("roads", "tilesets/roads.png")
-        this.load.image("uiatlas", "tilesets/UI_atlas.png")
-        this.load.image("allbuildings", "tilesets/allbuildingtileset.png")
-
+        /*  this.load.tilemapTiledJSON("overworld", "tilemaps/overworld.json");
+         this.load.image("Grass", "tilesets/grass/Grass.png")
+         this.load.image("GrassLand", "tilesets/grass/GrassLand.png")
+         this.load.image("GrassCoast", "tilesets/grass/GrassCoast.png")
+ 
+         this.load.image("Cave", "tilesets/cave/Cave.png")
+         this.load.image("CaveLand", "tilesets/cave/CaveLand.png")
+         this.load.image("CaveRock", "tilesets/cave/CaveRock.png")
+ 
+         this.load.image("treesmountains", "tilesets/treesmountains.png")
+         this.load.image("allbuildingtileset", "tilesets/allbuildingtileset.png")
+ 
+         this.load.image("Dirt", "tilesets/dirt/Dirt.png")
+         this.load.image("DirtLand", "tilesets/dirt/DirtLand.png")
+         this.load.image("DirtRock", "tilesets/dirt/DirtRock.png")
+ 
+         this.load.image("Ice", "tilesets/ice/Ice.png")
+         this.load.image("IceLand", "tilesets/ice/IceLand.png")
+         this.load.image("IceCoast", "tilesets/ice/IceCoast.png")
+ 
+         this.load.image("Lava", "tilesets/lava/Lava.png")
+         this.load.image("LavaLand", "tilesets/lava/LavaLand.png")
+         this.load.image("LavaCoast", "tilesets/lava/LavaCoast.png")
+ 
+         this.load.image("Marsh", "tilesets/marsh/Marsh.png")
+         this.load.image("MarshLand", "tilesets/marsh/MarshLand.png")
+         this.load.image("MarshCoast", "tilesets/marsh/MarshCoast.png")
+ 
+         this.load.image("OceanAnimated", "tilesets/ocean/OceanAnimated.png")
+         this.load.image("RiverAnimated", "tilesets/ocean/RiverAnimated.png")
+ 
+         this.load.image("roads", "tilesets/roads.png")
+         this.load.image("roads", "tilesets/roads.png")
+         this.load.image("uiatlas", "tilesets/UI_atlas.png")
+         this.load.image("allbuildings", "tilesets/allbuildingtileset.png")
+ 
+         this.load.tilemapTiledJSON("borderjson", "tilemaps/border.json");
+ 
+         this.load.atlas('arrows', "assets/arrows.png", "assets/arrows.json")
+         this.load.atlas('icons', "assets/icons.png", "assets/icons.json") */
 
         //player spritesheet for overworld
         //this.load.atlas('playeroverworld', "character/playeroverworld.png", "character/playeroverworld.json")
@@ -68,9 +78,9 @@ export default class Preloader extends Phaser.Scene {
         /*   //particles
           this.load.image("blueparticle", "assets/blue.png")
    */
-        enemies.forEach((enemy: any) => {
+        /* enemies.forEach((enemy: any) => {
             this.load.atlas(enemy.name, enemy.PathToPNG, enemy.PathToJSON)
-        })
+        }) */
         /* 
                 this.load.audio('ratsound', ["assets/sounds/rat/ratscream.mp3"])
                 this.load.audio('knifeswipe', ["assets/knifeSwipe2.mp3"])
@@ -108,7 +118,7 @@ export default class Preloader extends Phaser.Scene {
                hasIntroStarted: false,
            } */
 
-        this.scene.start("Overworld");
+        this.scene.start("Cemetery");
         /*    this.scene.start("Overworld", wrGame); */
 
     }

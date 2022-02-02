@@ -1,4 +1,6 @@
 import { Physics } from "phaser";
+//import AnimatedTiles from 'phaser-animated-tiles/dist/AnimatedTiles.min.js';
+
 
 enum OverworldLayers {
     structureforeground,
@@ -38,6 +40,8 @@ export default class Overworld extends Phaser.Scene {
 
 
     islightused!: boolean;
+    animatedTiles: any;
+
     constructor() {
         super("Overworld");
 
@@ -76,10 +80,11 @@ export default class Overworld extends Phaser.Scene {
 
     preload() {
         this.load.scenePlugin('AnimatedTiles', 'https://raw.githubusercontent.com/nkholski/phaser-animated-tiles/master/dist/AnimatedTiles.js', 'animatedTiles', 'animatedTiles');
-
+        // this.load.scenePlugin('animatedTiles', AnimatedTiles, 'animatedTiles', 'animatedTiles');
     }
     mapAllTileSets() {
-        var map = this.make.tilemap({ key: "overworld" });
+        var map = this.make.tilemap({ key: "cemetery" });
+
         let grass = map.addTilesetImage("Grass", "Grass");
         let grassLand = map.addTilesetImage("GrassLand", "GrassLand");
         let grassCoast = map.addTilesetImage("GrassCoast", "GrassCoast");
@@ -109,31 +114,39 @@ export default class Overworld extends Phaser.Scene {
             lavaLand, lavaCoast, ice, iceCoast, iceLand, marsh, marshCoast,
             MarshLand, ocean, river, roads, treesmountains, allbuildings];
 
-        this.structureforeground = map.createLayer(OverworldLayers.structureforeground, allTileSets);
-        this.structurebackground = map.createLayer(OverworldLayers.structurebackground, allTileSets);
-        this.roads = map.createLayer(OverworldLayers.roads, allTileSets);
-        this.trees = map.createLayer(OverworldLayers.trees, allTileSets);
-        this.regions = map.createLayer(OverworldLayers.regions, allTileSets);
-        this.water = map.createLayer(OverworldLayers.water, allTileSets);
+        this.structureforeground = map.createLayer(OverworldLayers.structureforeground, allTileSets).setPipeline("Light2D");
+        this.structurebackground = map.createLayer(OverworldLayers.structurebackground, allTileSets).setPipeline("Light2D");
+        this.roads = map.createLayer(OverworldLayers.roads, allTileSets).setPipeline("Light2D");
+        this.trees = map.createLayer(OverworldLayers.trees, allTileSets).setPipeline("Light2D");
+        this.regions = map.createLayer(OverworldLayers.regions, allTileSets).setPipeline("Light2D");
+        this.water = map.createLayer(OverworldLayers.water, allTileSets).setPipeline("Light2D");
         return map
 
     }
     createOverworld = () => {
-        this.load.scenePlugin('AnimatedTiles', 'https://raw.githubusercontent.com/nkholski/phaser-animated-tiles/master/dist/AnimatedTiles.js', 'animatedTiles', 'animatedTiles');
-        //  this.sound.play("ruinedworld", { volume: 0.03, loop: true });
+
+        //this.sound.play("ruinedworld", { volume: 0.03, loop: true });
         let map = this.mapAllTileSets();
-
-
 
         return map
     }
-
-    create() {
-        let map = this.createOverworld();
-        this.animatedTiles.init(map)
-        this.scene.launch("Title");
+    setLights() {
         this.lights.enable();
-        this.lights.setAmbientColor(0xffffff);
+        this.lights.setAmbientColor(0xFFFFFF);
+        this.lights.addLight(0, 0, 1000, 0x777777, 2);
+
+    }
+    create() {
+        this.setLights()
+        let map = this.createOverworld()
+        this.animatedTiles.init(map);
+        this.scene.launch("Title");
+        this.firebase.saveGameDate('userId', { name: "Me", score: 10003 }).then(() => { })
+
+        this.scene.launch("Status");
+        this.scene.launch("Border");
+
+
 
     }
 

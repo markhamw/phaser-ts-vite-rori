@@ -10,7 +10,7 @@ export interface EnemyType {
 declare global {
     namespace Phaser.GameObjects {
         interface GameObjectFactory {
-            unit(x: number, y: number, texture: string, enemydata: EnemyData, frame?: string | number): Unit;
+            unit(x: number, y: number, texture: string, enemydata: IEnemyData, frame?: string | number): Unit;
         }
     }
 }
@@ -34,14 +34,7 @@ export default class Unit
     ) {
         super(scene, x, y, texture, frame);
         this.enemydata = data
-        this.scene.physics.world.on(
-            Phaser.Physics.Arcade.Events.TILE_COLLIDE,
-            this.handleCollision
-        );
-        this.scene.physics.world.on(
-            Phaser.Physics.Arcade.Events.COLLIDE,
-            this.handleCollisionWithSprite
-        );
+ 
         this.startingX = x;
         this.startingY = y;
 
@@ -60,7 +53,7 @@ export default class Unit
         let chanceForIdle = Phaser.Math.Between(0, 4);
         if (chanceForIdle == 1 || 2 || 3) {
             this.facing = 8;
-            Stop(this.scene, this)
+            //  Stop(this.scene, this)
             this.play(this.enemydata!.IdleAnimKey);
         } else {
             this.facing = Phaser.Math.Between(0, 7);
@@ -69,22 +62,22 @@ export default class Unit
     }
 
 
-    handleCollision(
-        go: Phaser.GameObjects.GameObject,
-        tile: Phaser.Tilemaps.Tile
-    ) {
-        Stop(this, go)
+    /*     handleCollision(
+            go: Phaser.GameObjects.GameObject,
+            tile: Phaser.Tilemaps.Tile
+        ) {
+            Stop(this, go)
+    
+        } */
 
-    }
-
-    handleCollisionWithSprite(
-        unit: Phaser.GameObjects.GameObject,
-        obj2: Phaser.GameObjects.GameObject
-    ) {
-        console.log("emitting hit event")
-        this.scene.events.emit('enemy-collision', this, obj2);
-        console.log(this, obj2)
-    }
+    /*     handleCollisionWithSprite(
+            unit: Phaser.GameObjects.GameObject,
+            obj2: Phaser.GameObjects.GameObject
+        ) {
+            console.log("emitting hit event")
+            this.scene.events.emit('enemy-collision', this, obj2);
+            console.log(this, obj2)
+        } */
 
     preload() {
         this.scene.load.atlas(this.enemydata!.name, this.enemydata!.PathToPNG, this.enemydata!.PathToJSON)
@@ -734,7 +727,7 @@ export const enemies: IEnemyData[] = [
   }, */
 
 
-export function CreateEnemy(scene: any, enemy: string, x: number, y: number, scale?: number) {
+/* export function CreateEnemy(scene: any, enemy: string, x: number, y: number, scale?: number) {
     if (!scene.unitgroup) {
         scene.unitgroup = newEnemyGroup(scene, Unit, true, true);
     }
@@ -742,7 +735,7 @@ export function CreateEnemy(scene: any, enemy: string, x: number, y: number, sca
     scene.unitgroup.add(unit)
     unit.setDepth(3);
     return unit;
-}
+} */
 
 export interface AnimatedEnemy extends Phaser.Physics.Arcade.Sprite {
     IdleAnim(): void;
@@ -754,8 +747,8 @@ export interface AnimatedEnemy extends Phaser.Physics.Arcade.Sprite {
 
 export interface Collides extends Phaser.Physics.Arcade.Sprite {
     CollideWithOverWorldAndPlayer(): void;
-    handleCollision(player: Player): void;
-    handleCollisionWithSprite(sprite: Phaser.Physics.Arcade.Sprite): void;
+/*     handleCollision(player: Player): void;
+    handleCollisionWithSprite(sprite: Phaser.Physics.Arcade.Sprite): void; */
 }
 
 export const CollideWithOverWorldAndPlayer = (sprite: any, scene: any) => {
@@ -864,7 +857,7 @@ export function InitAnims(sprite: any): void {
 }
 
 
-const newEnemyGroup = (scene: Phaser.Scene, type: any, collides: boolean, collideWorldBounds: boolean) => {
+export const newEnemyGroup = (scene: Phaser.Scene, type: any, collides: boolean, collideWorldBounds: boolean) => {
     return scene.physics.add.group({
         classType: type,
         createCallback: (gameObject) => {
@@ -874,5 +867,7 @@ const newEnemyGroup = (scene: Phaser.Scene, type: any, collides: boolean, collid
         collideWorldBounds: collideWorldBounds,
     });
 }
+
+
 
 
