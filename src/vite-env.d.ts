@@ -5,3 +5,5 @@ declare namespace Phaser {
         firebase: import('./plugins/FirebasePlugin').default
     }
 }
+
+

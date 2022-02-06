@@ -1,24 +1,13 @@
 
 
 import Phaser from "phaser";
+import { Direction } from "./globalHelpers";
 
-export interface EnemyType {
-    enemydata: IEnemyData;
-}
-
-
-declare global {
-    namespace Phaser.GameObjects {
-        interface GameObjectFactory {
-            unit(x: number, y: number, texture: string, enemydata: IEnemyData, frame?: string | number): Unit;
-        }
-    }
-}
 
 export default class Unit
-    extends Phaser.Physics.Arcade.Sprite implements EnemyType {
+    extends Phaser.Physics.Arcade.Sprite  {
     facing = 8;
-    enemydata: IEnemyData;
+    enemydata: IEnemyData
     hit: number = 0;
     inBattle: boolean = false;
     roam?: boolean;
@@ -175,26 +164,6 @@ export default class Unit
     }
 }
 
-
-Phaser.GameObjects.GameObjectFactory.register(
-    "unit",
-    function (this: Phaser.GameObjects.GameObjectFactory, x: number, y: number, texture: string, enemydata: IEnemyData, frame?: string | number) {
-        var sprite = new Unit(this.scene as any, x, y, texture, enemydata, frame);
-
-        this.displayList.add(sprite);
-        this.updateList.add(sprite);
-        this.scene.physics.world.enableBody(sprite, Phaser.Physics.Arcade.DYNAMIC_BODY);
-
-        return sprite;
-    }
-);
-
-/* this.scene.events.addListener('player-clicked-fight', () => {
-    this.scene.events.emit('player-killed-rat', this)
-    this.scene.sound.add('ratsound', { volume: 0.1, detune: Phaser.Math.Between(-500, -1200) }).play()
-    this.isAlive = false;
-    this.anims.play({ key: 'enemy-rat-dead', frameRate: 3, repeat: 0, delay: 1 })
-}) */
 
 export type IEnemyData = {
     name: string;

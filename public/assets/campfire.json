@@ -1,0 +1,188 @@
+{
+	"textures": [
+		{
+			"image": "campfire.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 468,
+				"h": 198
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "campfire2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 19,
+						"w": 117,
+						"h": 99
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 117,
+						"h": 99
+					}
+				},
+				{
+					"filename": "campfire6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 19,
+						"w": 117,
+						"h": 99
+					},
+					"frame": {
+						"x": 120,
+						"y": 1,
+						"w": 117,
+						"h": 99
+					}
+				},
+				{
+					"filename": "campfire1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 21,
+						"w": 115,
+						"h": 95
+					},
+					"frame": {
+						"x": 239,
+						"y": 1,
+						"w": 115,
+						"h": 95
+					}
+				},
+				{
+					"filename": "campfire3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 21,
+						"w": 115,
+						"h": 95
+					},
+					"frame": {
+						"x": 239,
+						"y": 98,
+						"w": 115,
+						"h": 95
+					}
+				},
+				{
+					"filename": "campfire5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 21,
+						"w": 115,
+						"h": 95
+					},
+					"frame": {
+						"x": 1,
+						"y": 102,
+						"w": 115,
+						"h": 95
+					}
+				},
+				{
+					"filename": "campfire7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 21,
+						"w": 115,
+						"h": 95
+					},
+					"frame": {
+						"x": 118,
+						"y": 102,
+						"w": 115,
+						"h": 95
+					}
+				},
+				{
+					"filename": "campfire0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 22,
+						"w": 111,
+						"h": 93
+					},
+					"frame": {
+						"x": 356,
+						"y": 1,
+						"w": 111,
+						"h": 93
+					}
+				},
+				{
+					"filename": "campfire4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 22,
+						"w": 111,
+						"h": 93
+					},
+					"frame": {
+						"x": 356,
+						"y": 96,
+						"w": 111,
+						"h": 93
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:77b443bd88eb494aff7a73aaa552343c:ddf2fb788dd4e98360cfb4b4adc131a9:616b6138d66864ca5015a86ed70e2c46$"
+	}
+}

@@ -1,22 +1,26 @@
 import Phaser from 'phaser'
 import FirebasePlugin from './plugins/FirebasePlugin'
-import Border from './scenes/Border'
-import Cemetery from './scenes/Cemetery'
-import Overworld from './scenes/Overworld'
 import Preloader from './scenes/Preloader'
-import Status from './scenes/Status'
 import Title from './scenes/Title'
-
+import RexUIPlugin from 'phaser3-rex-plugins/templates/ui/ui-plugin.js';
+import Level from './scenes/Level'
+import Status from './scenes/Status';
+import Overworld from './scenes/Overworld';
 
 export default new Phaser.Game(
   {
-    scene: [Preloader, Cemetery],
+    scene: [Preloader, Level, Title, Status, Overworld],
     plugins: {
       global: [{
         key: 'FirebasePlugin',
         plugin: FirebasePlugin,
         start: true,
         mapping: 'firebase'
+      }],
+      scene: [{
+        key: 'rexUI',
+        plugin: RexUIPlugin,
+        mapping: 'rexUI'
       }]
     },
     type: Phaser.WEBGL,
@@ -30,12 +34,13 @@ export default new Phaser.Game(
       height: 1073,
       autoCenter: Phaser.Scale.Center.CENTER_BOTH,
     },
+
     physics: {
       default: 'arcade',
       arcade: {
-        gravity: { y: 0 },
-        debug: true,
+        debug: false,
       }
     },
+
     disableContextMenu: true,
   })

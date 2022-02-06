@@ -1,0 +1,188 @@
+{
+	"textures": [
+		{
+			"image": "warriorrun.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 275,
+				"h": 52
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "warrior-run-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 48,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 25,
+						"w": 35,
+						"h": 50
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 35,
+						"h": 50
+					}
+				},
+				{
+					"filename": "warrior-run-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 48,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 25,
+						"w": 38,
+						"h": 49
+					},
+					"frame": {
+						"x": 38,
+						"y": 1,
+						"w": 38,
+						"h": 49
+					}
+				},
+				{
+					"filename": "warrior-run-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 48,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 24,
+						"w": 38,
+						"h": 49
+					},
+					"frame": {
+						"x": 78,
+						"y": 1,
+						"w": 38,
+						"h": 49
+					}
+				},
+				{
+					"filename": "warrior-run-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 48,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 25,
+						"w": 29,
+						"h": 49
+					},
+					"frame": {
+						"x": 118,
+						"y": 1,
+						"w": 29,
+						"h": 49
+					}
+				},
+				{
+					"filename": "warrior-run-6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 48,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 26,
+						"w": 28,
+						"h": 49
+					},
+					"frame": {
+						"x": 149,
+						"y": 1,
+						"w": 28,
+						"h": 49
+					}
+				},
+				{
+					"filename": "warrior-run-5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 48,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 24,
+						"w": 31,
+						"h": 47
+					},
+					"frame": {
+						"x": 179,
+						"y": 1,
+						"w": 31,
+						"h": 47
+					}
+				},
+				{
+					"filename": "warrior-run-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 48,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 28,
+						"w": 30,
+						"h": 47
+					},
+					"frame": {
+						"x": 212,
+						"y": 1,
+						"w": 30,
+						"h": 47
+					}
+				},
+				{
+					"filename": "warrior-run-7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 48,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 29,
+						"w": 30,
+						"h": 46
+					},
+					"frame": {
+						"x": 244,
+						"y": 1,
+						"w": 30,
+						"h": 46
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:4ac37aa89bad714962c36f0c82e9674d:af4ed77ebb1cf7c05009da1a2cf01d6d:1f38aa6ef5a56e1fb561a50a86e2bdbc$"
+	}
+}

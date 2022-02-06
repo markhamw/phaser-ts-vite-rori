@@ -1,0 +1,2288 @@
+{
+	"textures": [
+		{
+			"image": "bat.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 803,
+				"h": 128
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "bat2walk7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 32,
+						"y": 23,
+						"w": 35,
+						"h": 33
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 35,
+						"h": 33
+					}
+				},
+				{
+					"filename": "batwalk7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 32,
+						"y": 23,
+						"w": 35,
+						"h": 33
+					},
+					"frame": {
+						"x": 1,
+						"y": 36,
+						"w": 35,
+						"h": 33
+					}
+				},
+				{
+					"filename": "bat2attack2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 27,
+						"w": 37,
+						"h": 32
+					},
+					"frame": {
+						"x": 1,
+						"y": 71,
+						"w": 37,
+						"h": 32
+					}
+				},
+				{
+					"filename": "bat2death12.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 25,
+						"y": 50,
+						"w": 46,
+						"h": 22
+					},
+					"frame": {
+						"x": 1,
+						"y": 105,
+						"w": 46,
+						"h": 22
+					}
+				},
+				{
+					"filename": "batattack2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 27,
+						"w": 37,
+						"h": 32
+					},
+					"frame": {
+						"x": 38,
+						"y": 1,
+						"w": 37,
+						"h": 32
+					}
+				},
+				{
+					"filename": "bat2attack6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 21,
+						"y": 21,
+						"w": 37,
+						"h": 31
+					},
+					"frame": {
+						"x": 38,
+						"y": 35,
+						"w": 37,
+						"h": 31
+					}
+				},
+				{
+					"filename": "batattack6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 21,
+						"y": 21,
+						"w": 37,
+						"h": 31
+					},
+					"frame": {
+						"x": 40,
+						"y": 68,
+						"w": 37,
+						"h": 31
+					}
+				},
+				{
+					"filename": "bat2death8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 25,
+						"y": 46,
+						"w": 44,
+						"h": 26
+					},
+					"frame": {
+						"x": 49,
+						"y": 101,
+						"w": 44,
+						"h": 26
+					}
+				},
+				{
+					"filename": "bat2windup5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 21,
+						"y": 21,
+						"w": 36,
+						"h": 31
+					},
+					"frame": {
+						"x": 77,
+						"y": 1,
+						"w": 36,
+						"h": 31
+					}
+				},
+				{
+					"filename": "batwindup5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 21,
+						"y": 21,
+						"w": 36,
+						"h": 31
+					},
+					"frame": {
+						"x": 77,
+						"y": 34,
+						"w": 36,
+						"h": 31
+					}
+				},
+				{
+					"filename": "bat2death0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 27,
+						"w": 30,
+						"h": 31
+					},
+					"frame": {
+						"x": 79,
+						"y": 67,
+						"w": 30,
+						"h": 31
+					}
+				},
+				{
+					"filename": "bat2hurt2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 27,
+						"w": 30,
+						"h": 31
+					},
+					"frame": {
+						"x": 79,
+						"y": 67,
+						"w": 30,
+						"h": 31
+					}
+				},
+				{
+					"filename": "bat2attack1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 25,
+						"w": 38,
+						"h": 27
+					},
+					"frame": {
+						"x": 95,
+						"y": 100,
+						"w": 38,
+						"h": 27
+					}
+				},
+				{
+					"filename": "batdeath0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 27,
+						"w": 30,
+						"h": 31
+					},
+					"frame": {
+						"x": 111,
+						"y": 67,
+						"w": 30,
+						"h": 31
+					}
+				},
+				{
+					"filename": "bathurt2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 27,
+						"w": 30,
+						"h": 31
+					},
+					"frame": {
+						"x": 111,
+						"y": 67,
+						"w": 30,
+						"h": 31
+					}
+				},
+				{
+					"filename": "batattack1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 25,
+						"w": 38,
+						"h": 27
+					},
+					"frame": {
+						"x": 135,
+						"y": 100,
+						"w": 38,
+						"h": 27
+					}
+				},
+				{
+					"filename": "bat2death3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 21,
+						"y": 22,
+						"w": 36,
+						"h": 30
+					},
+					"frame": {
+						"x": 115,
+						"y": 1,
+						"w": 36,
+						"h": 30
+					}
+				},
+				{
+					"filename": "bat2hurt5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 21,
+						"y": 22,
+						"w": 36,
+						"h": 30
+					},
+					"frame": {
+						"x": 115,
+						"y": 1,
+						"w": 36,
+						"h": 30
+					}
+				},
+				{
+					"filename": "batdeath3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 21,
+						"y": 22,
+						"w": 36,
+						"h": 30
+					},
+					"frame": {
+						"x": 115,
+						"y": 33,
+						"w": 36,
+						"h": 30
+					}
+				},
+				{
+					"filename": "bathurt5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 21,
+						"y": 22,
+						"w": 36,
+						"h": 30
+					},
+					"frame": {
+						"x": 115,
+						"y": 33,
+						"w": 36,
+						"h": 30
+					}
+				},
+				{
+					"filename": "bat2attack5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 22,
+						"y": 21,
+						"w": 35,
+						"h": 30
+					},
+					"frame": {
+						"x": 143,
+						"y": 65,
+						"w": 35,
+						"h": 30
+					}
+				},
+				{
+					"filename": "batattack5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 22,
+						"y": 21,
+						"w": 35,
+						"h": 30
+					},
+					"frame": {
+						"x": 175,
+						"y": 97,
+						"w": 35,
+						"h": 30
+					}
+				},
+				{
+					"filename": "bat2windup3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 24,
+						"y": 28,
+						"w": 34,
+						"h": 30
+					},
+					"frame": {
+						"x": 153,
+						"y": 1,
+						"w": 34,
+						"h": 30
+					}
+				},
+				{
+					"filename": "batwindup3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 24,
+						"y": 28,
+						"w": 34,
+						"h": 30
+					},
+					"frame": {
+						"x": 153,
+						"y": 33,
+						"w": 34,
+						"h": 30
+					}
+				},
+				{
+					"filename": "bat2attack3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 23,
+						"y": 25,
+						"w": 33,
+						"h": 30
+					},
+					"frame": {
+						"x": 180,
+						"y": 65,
+						"w": 33,
+						"h": 30
+					}
+				},
+				{
+					"filename": "batattack3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 23,
+						"y": 25,
+						"w": 33,
+						"h": 30
+					},
+					"frame": {
+						"x": 212,
+						"y": 97,
+						"w": 33,
+						"h": 30
+					}
+				},
+				{
+					"filename": "bat2death6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 26,
+						"y": 35,
+						"w": 44,
+						"h": 29
+					},
+					"frame": {
+						"x": 189,
+						"y": 1,
+						"w": 44,
+						"h": 29
+					}
+				},
+				{
+					"filename": "batdeath6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 26,
+						"y": 35,
+						"w": 44,
+						"h": 29
+					},
+					"frame": {
+						"x": 189,
+						"y": 32,
+						"w": 44,
+						"h": 29
+					}
+				},
+				{
+					"filename": "bat2hurt1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 31,
+						"w": 36,
+						"h": 29
+					},
+					"frame": {
+						"x": 215,
+						"y": 63,
+						"w": 36,
+						"h": 29
+					}
+				},
+				{
+					"filename": "bat2idle3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 31,
+						"w": 36,
+						"h": 29
+					},
+					"frame": {
+						"x": 215,
+						"y": 63,
+						"w": 36,
+						"h": 29
+					}
+				},
+				{
+					"filename": "bat2walk3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 31,
+						"w": 36,
+						"h": 29
+					},
+					"frame": {
+						"x": 215,
+						"y": 63,
+						"w": 36,
+						"h": 29
+					}
+				},
+				{
+					"filename": "bat2idle6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 27,
+						"w": 36,
+						"h": 29
+					},
+					"frame": {
+						"x": 247,
+						"y": 94,
+						"w": 36,
+						"h": 29
+					}
+				},
+				{
+					"filename": "bathurt1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 31,
+						"w": 36,
+						"h": 29
+					},
+					"frame": {
+						"x": 235,
+						"y": 1,
+						"w": 36,
+						"h": 29
+					}
+				},
+				{
+					"filename": "batidle3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 31,
+						"w": 36,
+						"h": 29
+					},
+					"frame": {
+						"x": 235,
+						"y": 1,
+						"w": 36,
+						"h": 29
+					}
+				},
+				{
+					"filename": "batwalk3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 31,
+						"w": 36,
+						"h": 29
+					},
+					"frame": {
+						"x": 235,
+						"y": 1,
+						"w": 36,
+						"h": 29
+					}
+				},
+				{
+					"filename": "batidle6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 27,
+						"w": 36,
+						"h": 29
+					},
+					"frame": {
+						"x": 235,
+						"y": 32,
+						"w": 36,
+						"h": 29
+					}
+				},
+				{
+					"filename": "bat2attack4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 23,
+						"y": 23,
+						"w": 33,
+						"h": 29
+					},
+					"frame": {
+						"x": 253,
+						"y": 63,
+						"w": 33,
+						"h": 29
+					}
+				},
+				{
+					"filename": "bat2idle5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 32,
+						"y": 28,
+						"w": 33,
+						"h": 29
+					},
+					"frame": {
+						"x": 285,
+						"y": 94,
+						"w": 33,
+						"h": 29
+					}
+				},
+				{
+					"filename": "batattack4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 23,
+						"y": 23,
+						"w": 33,
+						"h": 29
+					},
+					"frame": {
+						"x": 273,
+						"y": 1,
+						"w": 33,
+						"h": 29
+					}
+				},
+				{
+					"filename": "batidle5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 32,
+						"y": 28,
+						"w": 33,
+						"h": 29
+					},
+					"frame": {
+						"x": 273,
+						"y": 32,
+						"w": 33,
+						"h": 29
+					}
+				},
+				{
+					"filename": "bat2death2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 22,
+						"y": 21,
+						"w": 32,
+						"h": 29
+					},
+					"frame": {
+						"x": 288,
+						"y": 63,
+						"w": 32,
+						"h": 29
+					}
+				},
+				{
+					"filename": "bat2hurt4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 22,
+						"y": 21,
+						"w": 32,
+						"h": 29
+					},
+					"frame": {
+						"x": 288,
+						"y": 63,
+						"w": 32,
+						"h": 29
+					}
+				},
+				{
+					"filename": "bat2idle4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 30,
+						"w": 32,
+						"h": 29
+					},
+					"frame": {
+						"x": 320,
+						"y": 94,
+						"w": 32,
+						"h": 29
+					}
+				},
+				{
+					"filename": "batdeath2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 22,
+						"y": 21,
+						"w": 32,
+						"h": 29
+					},
+					"frame": {
+						"x": 308,
+						"y": 1,
+						"w": 32,
+						"h": 29
+					}
+				},
+				{
+					"filename": "bathurt4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 22,
+						"y": 21,
+						"w": 32,
+						"h": 29
+					},
+					"frame": {
+						"x": 308,
+						"y": 1,
+						"w": 32,
+						"h": 29
+					}
+				},
+				{
+					"filename": "batidle4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 30,
+						"w": 32,
+						"h": 29
+					},
+					"frame": {
+						"x": 308,
+						"y": 32,
+						"w": 32,
+						"h": 29
+					}
+				},
+				{
+					"filename": "bat2death7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 26,
+						"y": 42,
+						"w": 43,
+						"h": 28
+					},
+					"frame": {
+						"x": 322,
+						"y": 63,
+						"w": 43,
+						"h": 28
+					}
+				},
+				{
+					"filename": "batdeath7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 26,
+						"y": 42,
+						"w": 43,
+						"h": 28
+					},
+					"frame": {
+						"x": 354,
+						"y": 93,
+						"w": 43,
+						"h": 28
+					}
+				},
+				{
+					"filename": "bat2walk6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 26,
+						"w": 36,
+						"h": 28
+					},
+					"frame": {
+						"x": 342,
+						"y": 1,
+						"w": 36,
+						"h": 28
+					}
+				},
+				{
+					"filename": "batwalk6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 26,
+						"w": 36,
+						"h": 28
+					},
+					"frame": {
+						"x": 342,
+						"y": 31,
+						"w": 36,
+						"h": 28
+					}
+				},
+				{
+					"filename": "bat2walk5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 32,
+						"y": 27,
+						"w": 33,
+						"h": 28
+					},
+					"frame": {
+						"x": 367,
+						"y": 61,
+						"w": 33,
+						"h": 28
+					}
+				},
+				{
+					"filename": "batwalk5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 32,
+						"y": 27,
+						"w": 33,
+						"h": 28
+					},
+					"frame": {
+						"x": 399,
+						"y": 91,
+						"w": 33,
+						"h": 28
+					}
+				},
+				{
+					"filename": "bat2windup2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 27,
+						"y": 33,
+						"w": 32,
+						"h": 28
+					},
+					"frame": {
+						"x": 380,
+						"y": 1,
+						"w": 32,
+						"h": 28
+					}
+				},
+				{
+					"filename": "batwindup2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 27,
+						"y": 33,
+						"w": 32,
+						"h": 28
+					},
+					"frame": {
+						"x": 380,
+						"y": 31,
+						"w": 32,
+						"h": 28
+					}
+				},
+				{
+					"filename": "bat2walk4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 30,
+						"w": 32,
+						"h": 27
+					},
+					"frame": {
+						"x": 402,
+						"y": 61,
+						"w": 32,
+						"h": 27
+					}
+				},
+				{
+					"filename": "batwalk4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 30,
+						"w": 32,
+						"h": 27
+					},
+					"frame": {
+						"x": 434,
+						"y": 90,
+						"w": 32,
+						"h": 27
+					}
+				},
+				{
+					"filename": "bat2death1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 24,
+						"y": 23,
+						"w": 30,
+						"h": 27
+					},
+					"frame": {
+						"x": 414,
+						"y": 1,
+						"w": 30,
+						"h": 27
+					}
+				},
+				{
+					"filename": "bat2hurt3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 24,
+						"y": 23,
+						"w": 30,
+						"h": 27
+					},
+					"frame": {
+						"x": 414,
+						"y": 1,
+						"w": 30,
+						"h": 27
+					}
+				},
+				{
+					"filename": "batdeath1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 24,
+						"y": 23,
+						"w": 30,
+						"h": 27
+					},
+					"frame": {
+						"x": 414,
+						"y": 30,
+						"w": 30,
+						"h": 27
+					}
+				},
+				{
+					"filename": "bathurt3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 24,
+						"y": 23,
+						"w": 30,
+						"h": 27
+					},
+					"frame": {
+						"x": 414,
+						"y": 30,
+						"w": 30,
+						"h": 27
+					}
+				},
+				{
+					"filename": "batdeath8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 25,
+						"y": 46,
+						"w": 44,
+						"h": 26
+					},
+					"frame": {
+						"x": 436,
+						"y": 59,
+						"w": 44,
+						"h": 26
+					}
+				},
+				{
+					"filename": "bat2attack0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 26,
+						"w": 40,
+						"h": 25
+					},
+					"frame": {
+						"x": 468,
+						"y": 87,
+						"w": 40,
+						"h": 25
+					}
+				},
+				{
+					"filename": "batattack0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 26,
+						"w": 40,
+						"h": 25
+					},
+					"frame": {
+						"x": 446,
+						"y": 1,
+						"w": 40,
+						"h": 25
+					}
+				},
+				{
+					"filename": "bat2attack7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 25,
+						"w": 38,
+						"h": 25
+					},
+					"frame": {
+						"x": 446,
+						"y": 28,
+						"w": 38,
+						"h": 25
+					}
+				},
+				{
+					"filename": "bat2death4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 25,
+						"w": 38,
+						"h": 25
+					},
+					"frame": {
+						"x": 482,
+						"y": 55,
+						"w": 38,
+						"h": 25
+					}
+				},
+				{
+					"filename": "bat2hurt6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 25,
+						"w": 38,
+						"h": 25
+					},
+					"frame": {
+						"x": 482,
+						"y": 55,
+						"w": 38,
+						"h": 25
+					}
+				},
+				{
+					"filename": "bat2windup6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 25,
+						"w": 38,
+						"h": 25
+					},
+					"frame": {
+						"x": 486,
+						"y": 28,
+						"w": 38,
+						"h": 25
+					}
+				},
+				{
+					"filename": "batattack7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 25,
+						"w": 38,
+						"h": 25
+					},
+					"frame": {
+						"x": 488,
+						"y": 1,
+						"w": 38,
+						"h": 25
+					}
+				},
+				{
+					"filename": "batdeath4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 25,
+						"w": 38,
+						"h": 25
+					},
+					"frame": {
+						"x": 510,
+						"y": 82,
+						"w": 38,
+						"h": 25
+					}
+				},
+				{
+					"filename": "bathurt6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 25,
+						"w": 38,
+						"h": 25
+					},
+					"frame": {
+						"x": 510,
+						"y": 82,
+						"w": 38,
+						"h": 25
+					}
+				},
+				{
+					"filename": "batwindup6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 25,
+						"w": 38,
+						"h": 25
+					},
+					"frame": {
+						"x": 522,
+						"y": 55,
+						"w": 38,
+						"h": 25
+					}
+				},
+				{
+					"filename": "bat2hurt0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 27,
+						"w": 35,
+						"h": 25
+					},
+					"frame": {
+						"x": 526,
+						"y": 28,
+						"w": 35,
+						"h": 25
+					}
+				},
+				{
+					"filename": "bat2walk2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 27,
+						"w": 35,
+						"h": 25
+					},
+					"frame": {
+						"x": 526,
+						"y": 28,
+						"w": 35,
+						"h": 25
+					}
+				},
+				{
+					"filename": "bathurt0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 27,
+						"w": 35,
+						"h": 25
+					},
+					"frame": {
+						"x": 528,
+						"y": 1,
+						"w": 35,
+						"h": 25
+					}
+				},
+				{
+					"filename": "batwalk2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 27,
+						"w": 35,
+						"h": 25
+					},
+					"frame": {
+						"x": 528,
+						"y": 1,
+						"w": 35,
+						"h": 25
+					}
+				},
+				{
+					"filename": "bat2windup4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 25,
+						"y": 26,
+						"w": 30,
+						"h": 25
+					},
+					"frame": {
+						"x": 550,
+						"y": 82,
+						"w": 30,
+						"h": 25
+					}
+				},
+				{
+					"filename": "batwindup4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 25,
+						"y": 26,
+						"w": 30,
+						"h": 25
+					},
+					"frame": {
+						"x": 562,
+						"y": 55,
+						"w": 30,
+						"h": 25
+					}
+				},
+				{
+					"filename": "bat2idle2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 28,
+						"w": 35,
+						"h": 24
+					},
+					"frame": {
+						"x": 563,
+						"y": 28,
+						"w": 35,
+						"h": 24
+					}
+				},
+				{
+					"filename": "batidle2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 28,
+						"w": 35,
+						"h": 24
+					},
+					"frame": {
+						"x": 565,
+						"y": 1,
+						"w": 35,
+						"h": 24
+					}
+				},
+				{
+					"filename": "bat2death10.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 25,
+						"y": 49,
+						"w": 46,
+						"h": 23
+					},
+					"frame": {
+						"x": 582,
+						"y": 82,
+						"w": 46,
+						"h": 23
+					}
+				},
+				{
+					"filename": "bat2death11.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 25,
+						"y": 49,
+						"w": 46,
+						"h": 23
+					},
+					"frame": {
+						"x": 594,
+						"y": 54,
+						"w": 46,
+						"h": 23
+					}
+				},
+				{
+					"filename": "bat2death9.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 25,
+						"y": 49,
+						"w": 46,
+						"h": 23
+					},
+					"frame": {
+						"x": 600,
+						"y": 27,
+						"w": 46,
+						"h": 23
+					}
+				},
+				{
+					"filename": "batdeath10.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 25,
+						"y": 49,
+						"w": 46,
+						"h": 23
+					},
+					"frame": {
+						"x": 602,
+						"y": 1,
+						"w": 46,
+						"h": 23
+					}
+				},
+				{
+					"filename": "batdeath11.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 25,
+						"y": 49,
+						"w": 46,
+						"h": 23
+					},
+					"frame": {
+						"x": 630,
+						"y": 79,
+						"w": 46,
+						"h": 23
+					}
+				},
+				{
+					"filename": "batdeath9.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 25,
+						"y": 49,
+						"w": 46,
+						"h": 23
+					},
+					"frame": {
+						"x": 630,
+						"y": 104,
+						"w": 46,
+						"h": 23
+					}
+				},
+				{
+					"filename": "bat2death5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 23,
+						"y": 29,
+						"w": 38,
+						"h": 23
+					},
+					"frame": {
+						"x": 642,
+						"y": 52,
+						"w": 38,
+						"h": 23
+					}
+				},
+				{
+					"filename": "bat2hurt7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 25,
+						"y": 29,
+						"w": 38,
+						"h": 23
+					},
+					"frame": {
+						"x": 642,
+						"y": 52,
+						"w": 38,
+						"h": 23
+					}
+				},
+				{
+					"filename": "batdeath5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 23,
+						"y": 29,
+						"w": 38,
+						"h": 23
+					},
+					"frame": {
+						"x": 648,
+						"y": 26,
+						"w": 38,
+						"h": 23
+					}
+				},
+				{
+					"filename": "bathurt7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 25,
+						"y": 29,
+						"w": 38,
+						"h": 23
+					},
+					"frame": {
+						"x": 648,
+						"y": 26,
+						"w": 38,
+						"h": 23
+					}
+				},
+				{
+					"filename": "bat2hurt8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 28,
+						"w": 36,
+						"h": 23
+					},
+					"frame": {
+						"x": 650,
+						"y": 1,
+						"w": 36,
+						"h": 23
+					}
+				},
+				{
+					"filename": "bat2idle0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 28,
+						"w": 36,
+						"h": 23
+					},
+					"frame": {
+						"x": 650,
+						"y": 1,
+						"w": 36,
+						"h": 23
+					}
+				},
+				{
+					"filename": "bat2walk0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 28,
+						"w": 36,
+						"h": 23
+					},
+					"frame": {
+						"x": 650,
+						"y": 1,
+						"w": 36,
+						"h": 23
+					}
+				},
+				{
+					"filename": "bat2windup0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 28,
+						"w": 36,
+						"h": 23
+					},
+					"frame": {
+						"x": 678,
+						"y": 77,
+						"w": 36,
+						"h": 23
+					}
+				},
+				{
+					"filename": "bathurt8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 28,
+						"w": 36,
+						"h": 23
+					},
+					"frame": {
+						"x": 682,
+						"y": 51,
+						"w": 36,
+						"h": 23
+					}
+				},
+				{
+					"filename": "batidle0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 28,
+						"w": 36,
+						"h": 23
+					},
+					"frame": {
+						"x": 682,
+						"y": 51,
+						"w": 36,
+						"h": 23
+					}
+				},
+				{
+					"filename": "batwalk0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 28,
+						"w": 36,
+						"h": 23
+					},
+					"frame": {
+						"x": 682,
+						"y": 51,
+						"w": 36,
+						"h": 23
+					}
+				},
+				{
+					"filename": "batwindup0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 28,
+						"w": 36,
+						"h": 23
+					},
+					"frame": {
+						"x": 678,
+						"y": 102,
+						"w": 36,
+						"h": 23
+					}
+				},
+				{
+					"filename": "bat2idle7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 27,
+						"w": 32,
+						"h": 23
+					},
+					"frame": {
+						"x": 688,
+						"y": 1,
+						"w": 32,
+						"h": 23
+					}
+				},
+				{
+					"filename": "batidle7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 27,
+						"w": 32,
+						"h": 23
+					},
+					"frame": {
+						"x": 688,
+						"y": 26,
+						"w": 32,
+						"h": 23
+					}
+				},
+				{
+					"filename": "bat2windup1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 28,
+						"y": 29,
+						"w": 30,
+						"h": 23
+					},
+					"frame": {
+						"x": 716,
+						"y": 76,
+						"w": 30,
+						"h": 23
+					}
+				},
+				{
+					"filename": "batwindup1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 28,
+						"y": 29,
+						"w": 30,
+						"h": 23
+					},
+					"frame": {
+						"x": 720,
+						"y": 51,
+						"w": 30,
+						"h": 23
+					}
+				},
+				{
+					"filename": "bat2death13.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 25,
+						"y": 50,
+						"w": 46,
+						"h": 22
+					},
+					"frame": {
+						"x": 716,
+						"y": 101,
+						"w": 46,
+						"h": 22
+					}
+				},
+				{
+					"filename": "batdeath12.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 25,
+						"y": 50,
+						"w": 46,
+						"h": 22
+					},
+					"frame": {
+						"x": 748,
+						"y": 76,
+						"w": 46,
+						"h": 22
+					}
+				},
+				{
+					"filename": "bat2idle1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 30,
+						"y": 30,
+						"w": 38,
+						"h": 22
+					},
+					"frame": {
+						"x": 764,
+						"y": 100,
+						"w": 38,
+						"h": 22
+					}
+				},
+				{
+					"filename": "batdeath13.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 25,
+						"y": 50,
+						"w": 46,
+						"h": 22
+					},
+					"frame": {
+						"x": 752,
+						"y": 1,
+						"w": 46,
+						"h": 22
+					}
+				},
+				{
+					"filename": "bat2walk1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 30,
+						"y": 30,
+						"w": 38,
+						"h": 22
+					},
+					"frame": {
+						"x": 722,
+						"y": 25,
+						"w": 38,
+						"h": 22
+					}
+				},
+				{
+					"filename": "batidle1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 30,
+						"y": 30,
+						"w": 38,
+						"h": 22
+					},
+					"frame": {
+						"x": 752,
+						"y": 49,
+						"w": 38,
+						"h": 22
+					}
+				},
+				{
+					"filename": "batwalk1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 30,
+						"y": 30,
+						"w": 38,
+						"h": 22
+					},
+					"frame": {
+						"x": 762,
+						"y": 25,
+						"w": 38,
+						"h": 22
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:371b9ad7ee90c0aaf86a5a8277a8cbcc:19aa493451f8275bf8191534fcfddacd:7701fa4d77073f039a4bfcba279ca81e$"
+	}
+}
