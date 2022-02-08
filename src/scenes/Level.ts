@@ -3,16 +3,11 @@ import RexUIPlugin from "phaser3-rex-plugins/templates/ui/ui-plugin.js";
 import Zombie from "../characters/Zombie";
 
 import { newEnemyGroup } from "../enemies";
-import { AddWASDKeysToScene } from "../input";
+/* import { AddWASDKeysToScene } from "../input"; */
 import StateMachine from "../controllers/unit";
 import Skeleton from "../characters/Skeleton";
+import Spider from "../characters/Spider";
 
-enum CemeteryLayers {
-
-    BASE,
-    DETAILBACKGROUND,
-    DETAILFOREGROUND,
-}
 
 export default class Level extends Phaser.Scene {
     keys!: Phaser.Types.Input.Keyboard.CursorKeys;
@@ -57,27 +52,11 @@ export default class Level extends Phaser.Scene {
     }
 
     preload() {
-
+        
     }
 
 
     createAnims() {
-
-
-        this.anims.create({
-            key: "spider-idle",
-            frames: this.anims.generateFrameNames("spider", {
-                start: 0,
-                end: 7,
-                prefix: "spideridle",
-                suffix: ".png",
-            }),
-            repeat: -1,
-            frameRate: 14,
-        });
-
-        //TODO; create nims for spider
-
 
 
 
@@ -176,6 +155,7 @@ export default class Level extends Phaser.Scene {
     }
 
     mapAllTileSets() {
+
         this.tileMap = this.make.tilemap({ key: "level1" });
         let wall1 = this.tileMap.addTilesetImage("cemetery-tileset-wall1", "wall1");
         let terrain = this.tileMap.addTilesetImage("terrain", "terrain");
@@ -228,7 +208,7 @@ export default class Level extends Phaser.Scene {
 
     }
     create() {
-
+     //   this.scale.setGameSize(1920, 1076)
         this.scene.launch("Status");
         this.sound.play("cave1", { volume: 0.6, loop: true });
         this.keys = this.input.keyboard.createCursorKeys();
@@ -246,44 +226,46 @@ export default class Level extends Phaser.Scene {
         });
 
         this.player = this.physics.add
-            .sprite(300, 1000, "warrior", "warrior-idle-1.png")
+            .sprite(100, 200, "warrior", "warrior-idle-1.png")
             .setPipeline("Light2D");
         this.player.setCollideWorldBounds(true);
         this.player.setBodySize(32, 32);
         this.player.setDepth(3);
 
-        let zomgr = newEnemyGroup(this, Zombie, true, true)
+
         //room1 basically
-        for (let i = 0; i < 225; i++) {
+        let zomgr = newEnemyGroup(this, Zombie, true, true)
+        for (let i = 0; i < 5; i++) {
             zomgr.get(Phaser.Math.Between(700, 900), Phaser.Math.Between(800, 970), 'zombie', 'zombieidle1.png')
                 .setSize(32, 32).setPipeline("Light2D").setCollideWorldBounds(true)
                 .actions.setState('idle')
         }
-
+        this.physics.add.collider(zomgr, this.baseLayer);
 
 
         let skelgr = newEnemyGroup(this, Skeleton, true, true)
-        skelgr.get(810, 990, 'skeleton', 'skeletonidle1.png')
-            .setSize(32, 32).setPipeline("Light2D")
-            .setCollideWorldBounds(true)
-            .actions.setState('idle');
+        for (let i = 0; i < 4; i++) {
+            skelgr.get(810, 990, 'skeleton', 'skeletonidle1.png')
+                .setSize(32, 32).setPipeline("Light2D")
+                .setCollideWorldBounds(true)
+                .actions.setState('idle');
+            this.physics.add.collider(skelgr, this.baseLayer);
 
 
+        }
 
         /*        let batgr = newEnemyGroup(this, Bat, true, true)
                batgr.get(810, 990, 'bat', 'batidle.png')
                    .setSize(32, 32).setPipeline("Light2D").setCollideWorldBounds(true)
                    .actions.setState('idle');
     */
-
-
-
-        let spidergr = newEnemyGroup(this, Skeleton, true, true)
-        spidergr.get(810, 990, 'spider', 'spideridle0.png')
-            .setSize(32, 32).setPipeline("Light2D")
-            .setCollideWorldBounds(true).setScale(2.2)
-            .actions.setState('idle');
-
+        let spidergr = newEnemyGroup(this, Spider, true, true)
+        for (let i = 0; i < 3; i++) {
+            spidergr.get(Phaser.Math.Between(190, 320), Phaser.Math.Between(800, 920)).setPipeline("Light2D")
+                .setCollideWorldBounds(true).setScale(Phaser.Math.Between(0.5, 1.5))
+                .actions.setState('idle');
+        }
+        this.physics.add.collider(spidergr, this.baseLayer);
 
 
         this.bat = this.physics.add
@@ -299,12 +281,6 @@ export default class Level extends Phaser.Scene {
         this.worm.setCollideWorldBounds(true);
         this.worm.setSize(32, 32);
 
-        this.spider = this.physics.add
-            .sprite(820, 850, "spider", "spideridle0.png")
-            .setPipeline("Light2D")
-        this.spider.setCollideWorldBounds(true);
-        this.spider.setScale(2.2);
-        this.spider.setSize(16, 16);
 
         this.worm.setScale(1.5);
 
@@ -390,11 +366,6 @@ export default class Level extends Phaser.Scene {
         this.spiderstate?.setState("idle");
 
     }
-
-
-
-
-    //player methods
 
 
     playerIdleEnter() {

@@ -1,5 +1,4 @@
-import { CollideWithOverWorldAndPlayer } from "../enemies";
-import { Direction } from "../globalHelpers";
+
 import UnitActionsController from "../controllers/unit";
 
 
@@ -34,9 +33,6 @@ export default class Skeleton
         frame?: string | number,
     ) {
         super(scene, x, y, texture, frame);
-
-
-        this.actions = new UnitActionsController(this, 'skeleton');
 
         //get nims from scene
         this.scene.anims.create({

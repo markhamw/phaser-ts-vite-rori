@@ -9,7 +9,7 @@ import Overworld from './scenes/Overworld';
 
 export default new Phaser.Game(
   {
-    scene: [Preloader, Level, Title, Status, Overworld],
+    scene: [Preloader,Overworld,Level,Status,Title],
     plugins: {
       global: [{
         key: 'FirebasePlugin',
@@ -31,7 +31,7 @@ export default new Phaser.Game(
       parent: 'app',
       mode: Phaser.Scale.FIT,
       width: 1920,
-      height: 1073,
+      height: 1276,
       autoCenter: Phaser.Scale.Center.CENTER_BOTH,
     },
 

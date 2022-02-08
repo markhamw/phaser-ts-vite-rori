@@ -1,20 +1,23 @@
 import Phaser from "phaser";
+import UnitActionsController from "../controllers/unit";
 
-enum PlayerStates {
+/* enum PlayerStates {
   Idle,
   Walk,
   Stab,
   Slash,
   Death,
   Speak
-}
+} */
 
 
 export default class Player extends Phaser.Physics.Arcade.Sprite {
 
+
+
   constructor(scene: Phaser.Scene, x: number, y: number, texture: string, frame?: string | number) {
     super(scene, x, y, texture, frame);
- 
+    actions: UnitActionsController;
   }
 
   preload() {
@@ -37,7 +40,7 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
   preUpdate(t: number, dt: number) {
     super.preUpdate(t, dt);
     this.update();
-    
+
   }
 }
 

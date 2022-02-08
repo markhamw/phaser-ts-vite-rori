@@ -1,9 +1,8 @@
-import { CollideWithOverWorldAndPlayer } from "../enemies";
-import { Direction } from "../globalHelpers";
+
 import UnitActionsController from "../controllers/unit";
 
 
-enum ZombieStates {
+/* enum ZombieStates {
     Idle,
     Walk,
     Attack,
@@ -11,7 +10,7 @@ enum ZombieStates {
     Roam,
     funny1,
     funny2
-}
+} */
 
 export default class Zombie
     extends Phaser.Physics.Arcade.Sprite {
@@ -30,19 +29,6 @@ export default class Zombie
     ) {
         super(scene, x, y, texture, frame);
 
-        this.actions = new UnitActionsController(this, 'zombie');
-
-        this.scene.anims.create({
-            key: "zombie-idle",
-            frames: this.anims.generateFrameNames("zombie", {
-                start: 0,
-                end: 7,
-                prefix: "zombieidle",
-                suffix: ".png",
-            }),
-            repeat: -1,
-            frameRate: 12,
-        });
         this.scene.anims.create({
             key: "zombie-idle",
             frames: this.anims.generateFrameNames("zombie", {
@@ -157,7 +143,7 @@ export default class Zombie
             .addState("roam", {
                 onEnter: () => {
                     console.log('braaaaaaaaaaains roam enter')
-                    this.scene.sound.play("zombie-breath", { volume: 0.13, loop: false });
+                    this.scene.sound.play("zombie-breath", { volume: 0.06, loop: false });
                     this.play("zombie-walk");
                     this.setVelocity(Phaser.Math.Between(-10, 10), Phaser.Math.Between(-10, 10));
                     this.scene.time.delayedCall(Phaser.Math.Between(1000, 3000), () => {

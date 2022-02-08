@@ -62,13 +62,27 @@ export default class FirebasePlugin extends Phaser.Plugins.BasePlugin {
     }
 
 
-    async saveGameDate(userId: string, data: { name: string, score: number }) {
+    async saveGameDate(userId: string, data: {
+        displayName: string,
+        name: string,
+        isLevel1Complete: boolean, 
+        visits: number, 
+        HP: number, 
+        MP: number, 
+        gold: number
+    }) {
         await setDoc(doc(this.db, `game-data`, userId), data)
     }
 
 
     async loadGameData(userId: string) {
-        const snap = await getDoc(doc(this.db, `game-data`, userId)) as DocumentSnapshot<{ name: string, score: number }>
+        const snap = await getDoc(doc(this.db, `game-data`, userId)) as DocumentSnapshot<{   name: string,
+            displayName: string,
+            isLevel1Complete: boolean, 
+            visits: number, 
+            HP: number, 
+            MP: number, 
+            gold: number }>
         return snap.data()
 
     }

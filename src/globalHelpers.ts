@@ -33,15 +33,4 @@ export const CreateSpriteAnim = (sprite: Phaser.GameObjects.Sprite, animationKey
 }
 
 
-//put this in obj data instead
-/* export type Placement = {
-    collection: string;
-    tag: string;
-    location: Location;
-    name: string;
-    animationname?: string;
-    transform?: {
-      scale?: number;
-    };
-    identlines?: string[];
-  }; */
+

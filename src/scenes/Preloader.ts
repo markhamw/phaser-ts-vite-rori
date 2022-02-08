@@ -7,11 +7,12 @@ export default class Preloader extends Phaser.Scene {
     }
 
     preload() {
-
+        this.load.tilemapTiledJSON("level1", "tilemaps/Level1.json")
         this.load.atlas('warrior', "character/warrior.png", "character/warrior.json")
         this.load.atlas('warriorrun', "character/warriorrun.png", "character/warriorrun.json")
-        this.load.tilemapTiledJSON("level1", "tilemaps/level1.json")
+
         this.load.atlas('campfire', "assets/campfire.png", "assets/campfire.json")
+        this.load.atlas('playeroverworld', "character/playeroverworld.png", "character/playeroverworld.json")
 
         this.load.atlas('zombie', "assets/zombie.png", "assets/zombie.json")
         this.load.atlas('skeleton', "assets/skeleton.png", "assets/skeleton.json")
@@ -19,7 +20,8 @@ export default class Preloader extends Phaser.Scene {
         this.load.atlas('worm2', "assets/worm.png", "assets/worm.json")
         this.load.atlas('spider', "assets/spider.png", "assets/spider.json")
 
-        this.load.atlas('spider', "assets/spider.png", "assets/spider.json")
+        this.load.atlas('clouds', "assets/overworld/clouds.png", "assets/overworld/clouds.json")
+        this.load.atlas('cloudsshadows', "assets/overworld/cloudshadows.png", "assets/overworld/cloudsshadows.json")
 
 
         //level1/cemetery
@@ -32,7 +34,7 @@ export default class Preloader extends Phaser.Scene {
 
 
         //intro
-        this.load.tilemapTiledJSON("overworld2", "tilemaps/overworld2.json")
+        this.load.tilemapTiledJSON("overworld4", "tilemaps/overworld4.json")
 
         this.load.image("Grass", "tilesets/grass/Grass.png")
         this.load.image("GrassLand", "tilesets/grass/GrassLand.png")
@@ -43,7 +45,7 @@ export default class Preloader extends Phaser.Scene {
         this.load.image("CaveRock", "tilesets/cave/CaveRock.png")
 
         this.load.image("treesmountains", "tilesets/treesmountains.png")
-      
+
         this.load.image("Lava", "tilesets/lava/Lava.png")
         this.load.image("LavaLand", "tilesets/lava/LavaLand.png")
         this.load.image("LavaCoast", "tilesets/lava/LavaCoast.png")
@@ -56,7 +58,7 @@ export default class Preloader extends Phaser.Scene {
         this.load.image("RiverAnimated", "tilesets/ocean/RiverAnimated.png")
 
         this.load.image("roads", "tilesets/roads.png")
-        //  this.load.image("uiatlas", "tilesets/UI_atlas.png")
+        this.load.image("uiatlas", "tilesets/UI_atlas.png")
         this.load.image("allbuildings", "tilesets/allbuildingtileset.png")
 
         this.load.image('grass1', "tilesets/grass1.png")
@@ -110,6 +112,7 @@ export default class Preloader extends Phaser.Scene {
 
         this.load.audio('cave1', ["assets/sounds/ambient/cave1.wav"])
         this.load.audio('torch1', ["assets/sounds/torch4.wav"])
+
 
 
         /*  this.load.tilemapTiledJSON("overworld", "tilemaps/overworld.json");
@@ -209,14 +212,9 @@ export default class Preloader extends Phaser.Scene {
 
     create() {
 
-        /*    let wrGame: WRGame = {
-               isStarted: true,
-               playerName: "Player",
-               playerHead: "heads-1.png",
-               hasIntroStarted: false,
-           } */
 
-        this.scene.start("Level");
+
+        this.scene.start("Title")
         /*    this.scene.start("Overworld", wrGame); */
 
     }

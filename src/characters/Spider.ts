@@ -1,5 +1,4 @@
-import { CollideWithOverWorldAndPlayer } from "../enemies";
-import { Direction } from "../globalHelpers";
+
 import UnitActionsController from "../controllers/unit";
 
 
@@ -35,14 +34,12 @@ export default class Skeleton
         super(scene, x, y, texture, frame);
 
 
-        this.actions = new UnitActionsController(this, 'spider');
-
         //get nims from scene
         this.scene.anims.create({
             key: "spider-idle",
             frames: this.anims.generateFrameNames("spider", {
                 start: 0,
-                end: 6,
+                end: 7,
                 prefix: "spideridle",
                 suffix: ".png",
             }),
@@ -50,10 +47,21 @@ export default class Skeleton
             frameRate: 12,
         });
         this.scene.anims.create({
-            key: "spider-attack",
+            key: "spider-death",
             frames: this.anims.generateFrameNames("spider", {
                 start: 0,
                 end: 16,
+                prefix: "spiderdeath",
+                suffix: ".png",
+            }),
+            repeat: 0,
+            frameRate: 22,
+        });
+        this.scene.anims.create({
+            key: "spider-attack",
+            frames: this.anims.generateFrameNames("spider", {
+                start: 0,
+                end: 11,
                 prefix: "spiderattack",
                 suffix: ".png",
             }),
@@ -76,7 +84,7 @@ export default class Skeleton
                 onEnter: () => {
                     this.play("spider-idle");
                     this.setVelocityX(0);
-                    this.scene.time.delayedCall(Phaser.Math.Between(3000, 9000), () => {
+                    this.scene.time.delayedCall(Phaser.Math.Between(200, 1000), () => {
                         this.actions.setState('roam');
                     }, [], this);
                 },
@@ -132,9 +140,7 @@ export default class Skeleton
     }
 
     create() {
-        this.scene.time.delayedCall(Phaser.Math.Between(1000, 3000), () => {
-            this.actions.setState('attack');
-        }, [], this);
+
     }
 
 
