@@ -1,5 +1,11 @@
 
 import RexUIPlugin from "phaser3-rex-plugins/templates/ui/ui-plugin.js";
+import Bird, { BirdAnims } from "../characters/Bird";
+import Deer, { DeerStates } from "../characters/overworld/Deer";
+import Monk, { MonkStates } from "../characters/overworld/Monk";
+
+import OverworldPlayer from "../characters/overworld/OverworldPlayer";
+import UnitActionsController from "../controllers/unit";
 import StateMachine from "../controllers/unit";
 
 
@@ -22,7 +28,7 @@ import StateMachine from "../controllers/unit";
 export default class Overworld extends Phaser.Scene {
     keys!: Phaser.Types.Input.Keyboard.CursorKeys;
     wasd!: Phaser.Input.Keyboard.Key[];
-    player!: Phaser.Physics.Arcade.Sprite;
+    player!: OverworldPlayer
     playerstate!: StateMachine;
     playerlight!: Phaser.GameObjects.Light;
     animatedTiles: any;
@@ -44,100 +50,7 @@ export default class Overworld extends Phaser.Scene {
 
 
     }
-    GetOverworldPlayerAnims = (anims: Phaser.Animations.AnimationManager, rate: number, playerID: string) => {
-        return [
 
-            {
-                key: "player-movedown",
-                frames: anims.generateFrameNames(playerID, {
-                    start: 1,
-                    end: 4,
-                    prefix: "player-movedown-",
-                    suffix: ".png",
-                }),
-                repeat: -1,
-                frameRate: rate,
-            },
-            {
-                key: "player-moveup",
-                frames: anims.generateFrameNames(playerID, {
-                    start: 1,
-                    end: 4,
-                    prefix: "player-moveup-",
-                    suffix: ".png",
-                }),
-                repeat: -1,
-                frameRate: rate,
-            },
-            {
-                key: "player-moveleft",
-                frames: anims.generateFrameNames(playerID, {
-                    start: 1,
-                    end: 4,
-                    prefix: "player-moveleft-",
-                    suffix: ".png",
-                }),
-                repeat: -1,
-                frameRate: rate,
-            },
-            {
-                key: "player-moveright",
-                frames: anims.generateFrameNames(playerID, {
-                    start: 1,
-                    end: 4,
-                    prefix: "player-moveright-",
-                    suffix: ".png",
-                }),
-                repeat: -1,
-                frameRate: rate,
-            },
-            {
-                key: "player-moveleftanddown",
-                frames: anims.generateFrameNames(playerID, {
-                    start: 1,
-                    end: 4,
-                    prefix: "player-moveleftanddown-",
-                    suffix: ".png",
-                }),
-                repeat: -1,
-                frameRate: rate,
-            },
-            {
-                key: "player-moveleftandup",
-                frames: anims.generateFrameNames(playerID, {
-                    start: 1,
-                    end: 4,
-                    prefix: "player-moveleftandup-",
-                    suffix: ".png",
-                }),
-                repeat: -1,
-                frameRate: rate,
-            },
-            {
-                key: "player-moverightanddown",
-                frames: anims.generateFrameNames(playerID, {
-                    start: 1,
-                    end: 4,
-                    prefix: "player-moverightanddown-",
-                    suffix: ".png",
-                }),
-                repeat: -1,
-                frameRate: rate,
-            },
-            {
-                key: "player-moverightandup",
-                frames: anims.generateFrameNames(playerID, {
-                    start: 1,
-                    end: 4,
-                    prefix: "player-moverightandup-",
-                    suffix: ".png",
-                }),
-                repeat: -1,
-                frameRate: rate,
-            },
-
-        ]
-    }
     AddCloudWithShadow = () => {
 
 
@@ -148,11 +61,13 @@ export default class Overworld extends Phaser.Scene {
             .sprite(cloudx, cloudy, "cloudsshadows", `Clouds${cloudPngNumberVariant}.png`)
             .setAlpha(0.4)
             .setDepth(4)
+            .setPipeline("Light2D");
 
         let cloud = this.physics.add
             .sprite(cloudx + 10, cloudy + 20, "clouds", `Clouds${cloudPngNumberVariant}.png`)
             .setAlpha(0.2)
             .setDepth(4)
+            .setPipeline("Light2D");
 
         let cloudSize = Phaser.Math.Between(2, 10);
         cloud.setScale(cloudSize);
@@ -198,76 +113,284 @@ export default class Overworld extends Phaser.Scene {
     };
 
     preload() {
+
+        this.lights.enable();
+        this.lights.setAmbientColor(0x111111)
+        //this.lights.addLight(200, 200, 1000, 0xffffff);
+        this.cameras.main.setZoom(2.0);
+        this.cameras.main.fadeIn(4000);
+        this.cameras.main.setScroll(-300, 0);
+        this.time.addEvent({
+            delay: 3000,
+            callback: () => {
+                this.cameras.main.zoomTo(4.5, 3000);
+            },
+            loop: false
+        })
+
+
+
+        this.anims.create({
+            key: BirdAnims.white.color + BirdAnims.white.flyleft.animkey,
+            frames: this.anims.generateFrameNames("birds", {
+                start: BirdAnims.white.flyleft.start,
+                end: BirdAnims.white.flyleft.end,
+                prefix: BirdAnims.white.color,
+                suffix: ".png",
+            }),
+            repeat: -1,
+            frameRate: 8,
+        });
+
+        this.anims.create({
+            key: BirdAnims.white.color + BirdAnims.white.flyright.animkey,
+            frames: this.anims.generateFrameNames("birds", {
+                start: BirdAnims.white.flyright.start,
+                end: BirdAnims.white.flyright.end,
+                prefix: BirdAnims.white.color,
+                suffix: ".png",
+            }),
+            repeat: -1,
+            frameRate: 8,
+        });
+
+        this.anims.create({
+            key: BirdAnims.white.color + BirdAnims.white.flyup.animkey,
+            frames: this.anims.generateFrameNames("birds", {
+                start: BirdAnims.white.flyup.start,
+                end: BirdAnims.white.flyup.end,
+                prefix: BirdAnims.white.color,
+                suffix: ".png",
+            }),
+            repeat: -1,
+            frameRate: 8,
+        });
+
+        this.anims.create({
+            key: BirdAnims.white.color + BirdAnims.white.flydown.animkey,
+            frames: this.anims.generateFrameNames("birds", {
+                start: BirdAnims.white.flydown.start,
+                end: BirdAnims.white.flydown.end,
+                prefix: BirdAnims.white.color,
+                suffix: ".png",
+            }),
+            repeat: -1,
+            frameRate: 8,
+        });
+
+
+
+
+
+
+
+        this.anims.create({
+            key: BirdAnims.blue.color + BirdAnims.blue.flyleft.animkey,
+            frames: this.anims.generateFrameNames("birds", {
+                start: BirdAnims.blue.flyleft.start,
+                end: BirdAnims.blue.flyleft.end,
+                prefix: BirdAnims.blue.color,
+                suffix: ".png",
+            }),
+            repeat: -1,
+            frameRate: 8,
+        });
+
+        this.anims.create({
+            key: BirdAnims.blue.color + BirdAnims.blue.flyright.animkey,
+            frames: this.anims.generateFrameNames("birds", {
+                start: BirdAnims.blue.flyright.start,
+                end: BirdAnims.blue.flyright.end,
+                prefix: BirdAnims.blue.color,
+                suffix: ".png",
+            }),
+            repeat: -1,
+            frameRate: 8,
+        });
+
+        this.anims.create({
+            key: BirdAnims.blue.color + BirdAnims.blue.flyup.animkey,
+            frames: this.anims.generateFrameNames("birds", {
+                start: BirdAnims.blue.flyup.start,
+                end: BirdAnims.blue.flyup.end,
+                prefix: BirdAnims.blue.color,
+                suffix: ".png",
+            }),
+            repeat: -1,
+            frameRate: 8,
+        });
+
+        this.anims.create({
+            key: BirdAnims.blue.color + BirdAnims.blue.flydown.animkey,
+            frames: this.anims.generateFrameNames("birds", {
+                start: BirdAnims.blue.flydown.start,
+                end: BirdAnims.blue.flydown.end,
+                prefix: BirdAnims.blue.color,
+                suffix: ".png",
+            }),
+            repeat: -1,
+            frameRate: 8,
+        });
+
+
+
+
+
+
+
+        this.anims.create({
+            key: BirdAnims.red.color + BirdAnims.red.flyleft.animkey,
+            frames: this.anims.generateFrameNames("birds", {
+                start: BirdAnims.red.flyleft.start,
+                end: BirdAnims.red.flyleft.end,
+                prefix: BirdAnims.red.color,
+                suffix: ".png",
+            }),
+            repeat: -1,
+            frameRate: 8,
+        });
+
+        this.anims.create({
+            key: BirdAnims.red.color + BirdAnims.red.flyright.animkey,
+            frames: this.anims.generateFrameNames("birds", {
+                start: BirdAnims.red.flyright.start,
+                end: BirdAnims.red.flyright.end,
+                prefix: BirdAnims.red.color,
+                suffix: ".png",
+            }),
+            repeat: -1,
+            frameRate: 8,
+        });
+
+        this.anims.create({
+            key: BirdAnims.red.color + BirdAnims.red.flyup.animkey,
+            frames: this.anims.generateFrameNames("birds", {
+                start: BirdAnims.red.flyup.start,
+                end: BirdAnims.red.flyup.end,
+                prefix: BirdAnims.red.color,
+                suffix: ".png",
+            }),
+            repeat: -1,
+            frameRate: 8,
+        });
+
+        this.anims.create({
+            key: BirdAnims.red.color + BirdAnims.red.flydown.animkey,
+            frames: this.anims.generateFrameNames("birds", {
+                start: BirdAnims.red.flydown.start,
+                end: BirdAnims.red.flydown.end,
+                prefix: BirdAnims.red.color,
+                suffix: ".png",
+            }),
+            repeat: -1,
+            frameRate: 8,
+        });
+
+        this.anims.create({
+            key: BirdAnims.brown.color + BirdAnims.brown.flyleft.animkey,
+            frames: this.anims.generateFrameNames("birds", {
+                start: BirdAnims.brown.flyleft.start,
+                end: BirdAnims.brown.flyleft.end,
+                prefix: BirdAnims.brown.color,
+                suffix: ".png",
+            }),
+            repeat: -1,
+            frameRate: 8,
+        });
+
+        this.anims.create({
+            key: BirdAnims.brown.color + BirdAnims.brown.flyright.animkey,
+            frames: this.anims.generateFrameNames("birds", {
+                start: BirdAnims.brown.flyright.start,
+                end: BirdAnims.brown.flyright.end,
+                prefix: BirdAnims.brown.color,
+                suffix: ".png",
+            }),
+            repeat: -1,
+            frameRate: 8,
+        });
+
+        this.anims.create({
+            key: BirdAnims.brown.color + BirdAnims.brown.flyup.animkey,
+            frames: this.anims.generateFrameNames("birds", {
+                start: BirdAnims.brown.flyup.start,
+                end: BirdAnims.brown.flyup.end,
+                prefix: BirdAnims.brown.color,
+                suffix: ".png",
+            }),
+            repeat: -1,
+            frameRate: 8,
+        });
+
+        this.anims.create({
+            key: BirdAnims.brown.color + BirdAnims.brown.flydown.animkey,
+            frames: this.anims.generateFrameNames("birds", {
+                start: BirdAnims.brown.flydown.start,
+                end: BirdAnims.brown.flydown.end,
+                prefix: BirdAnims.brown.color,
+                suffix: ".png",
+            }),
+            repeat: -1,
+            frameRate: 8,
+        });
+        this.anims.create({
+            key: "campfire-action",
+            frames: this.anims.generateFrameNames("allbuildingsatlas", {
+                start: 1,
+                end: 4,
+                prefix: "Campfire",
+                suffix: ".png",
+            }),
+            repeat: -1,
+            frameRate: 4,
+        });
+        this.anims.create({
+            key: "fontainofmagic-action",
+            frames: this.anims.generateFrameNames("allbuildingsatlas", {
+                start: 1,
+                end: 4,
+                prefix: "FontainOfMagic",
+                suffix: ".png",
+            }),
+            repeat: -1,
+            frameRate: 4,
+        });
+        this.anims.create({
+            key: "stables-action",
+            frames: this.anims.generateFrameNames("allbuildingsatlas", {
+                start: 1,
+                end: 4,
+                prefix: "Stables",
+                suffix: ".png",
+            }),
+            repeat: -1,
+            frameRate: 1,
+        });
+
+        /*     this.anims.create({
+                key: "monkidle",
+                frames: this.anims.generateFrameNames("enemy-monk", {
+                    start: 1,
+                    end: 4,
+                    prefix: "MonkIdle",
+                    suffix: ".png",
+                }),
+                repeat: -1,
+                frameRate: 1,
+            }); */
+
+
+        this.cameras.main.setRoundPixels(true);
+
         this.load.scenePlugin('AnimatedTiles', 'https://raw.githubusercontent.com/nkholski/phaser-animated-tiles/master/dist/AnimatedTiles.js', 'animatedTiles', 'animatedTiles');
         this.cloudGroup = this.physics.add.group();
+
     }
 
-    /* 
-        createAnims() {
-    
-    
-            this.player.anims.create({
-                key: "warrior-idle",
-                frames: this.player.anims.generateFrameNames("warrior", {
-                    start: 0,
-                    end: 15,
-                    prefix: "warrior-idle-",
-                    suffix: ".png",
-                }),
-                repeat: -1,
-                frameRate: 15,
-            });
-            this.player.anims.create({
-                key: "warrior-run",
-                frames: this.anims.generateFrameNames("warriorrun", {
-                    start: 0,
-                    end: 7,
-                    prefix: "warrior-run-",
-                    suffix: ".png",
-                }),
-                repeat: -1,
-                frameRate: 13,
-            });
-            this.player.anims.create({
-                key: "warrior-attack1",
-                frames: this.anims.generateFrameNames("warrior", {
-                    start: 0,
-                    end: 10,
-                    prefix: "warrior-swingone-",
-                    suffix: ".png",
-                }),
-                repeat: 0,
-                frameRate: 19,
-            });
-            this.player.anims.create({
-                key: "warrior-attack2",
-                frames: this.anims.generateFrameNames("warrior", {
-                    start: 0,
-                    end: 15,
-                    prefix: "warrior-swingthree-",
-                    suffix: ".png",
-                }),
-                repeat: 0,
-                frameRate: 19,
-            });
-            this.player.anims.create({
-                key: "warrior-death",
-                frames: this.anims.generateFrameNames("warrior", {
-                    start: 0,
-                    end: 10,
-                    prefix: "warrior-death-",
-                    suffix: ".png",
-                }),
-                repeat: 0,
-                frameRate: 10,
-            });
-    
-    
-        } */
+
 
     mapAllTileSets() {
         this.tileMap = this.make.tilemap({ key: "overworld4" });
-
 
         let abt = this.tileMap.addTilesetImage("allbuildingtileset", "allbuildings")
         let cave = this.tileMap.addTilesetImage("Cave", "Cave");
@@ -289,9 +412,10 @@ export default class Overworld extends Phaser.Scene {
         //let RiverAnimated = this.tileMap.addTilesetImage("RiverAnimated", "RiverAnimated");
         let roads = this.tileMap.addTilesetImage("roads", "roads");
         let treesmountains = this.tileMap.addTilesetImage("treesmountains", "treesmountains");
+        let allbiomes = this.tileMap.addTilesetImage("AllBiomes", "allbiomes");
 
 
-        let allTileSets = [abt, cave, CaveLand, CaveRock,
+        let allTileSets = [allbiomes, abt, cave, CaveLand, CaveRock,
             Grass, grass1, grass2, grass3, GrassCoast,
             GrassLand, Lava, LavaCoast, LavaLand, Marsh,
             MarshCoast, MarshLand, OceanAnimated,
@@ -301,31 +425,33 @@ export default class Overworld extends Phaser.Scene {
 
         this.Base = this.tileMap
             .createLayer('Base', allTileSets)
-            .setCollisionByProperty({ collides: true });
+            .setCollisionByProperty({ collides: true })
+            .setPipeline('Light2D');
+
         this.Detail = this.tileMap
             .createLayer('Detail', allTileSets)
-            .setCollisionByProperty({ collides: true });
+            .setCollisionByProperty({ collides: true }).setPipeline('Light2D');
         this.TopDetail = this.tileMap
             .createLayer('TopDetail', allTileSets)
-            .setCollisionByProperty({ collides: true });
+            .setCollisionByProperty({ collides: true }).setPipeline('Light2D');
         this.TopDetail2 = this.tileMap
             .createLayer('TopDetail2', allTileSets)
-            .setCollisionByProperty({ collides: true });
+            .setCollisionByProperty({ collides: true }).setPipeline('Light2D');
         this.TopDetail3 = this.tileMap
             .createLayer('TopDetail3', allTileSets)
-            .setCollisionByProperty({ collides: true });
+            .setCollisionByProperty({ collides: true }).setPipeline('Light2D');
         this.Trees = this.tileMap
             .createLayer('Trees', allTileSets)
-            .setCollisionByProperty({ collides: true });
+            .setCollisionByProperty({ collides: true }).setPipeline('Light2D');
         this.Trees2 = this.tileMap
             .createLayer('Trees2', allTileSets)
-            .setCollisionByProperty({ collides: true });
+            .setCollisionByProperty({ collides: true }).setPipeline('Light2D');
         this.Trees3 = this.tileMap
             .createLayer('Trees3', allTileSets)
-            .setCollisionByProperty({ collides: true });
+            .setCollisionByProperty({ collides: true }).setPipeline('Light2D');
         this.InFrontOfPlayer = this.tileMap
             .createLayer('InFrontOfPlayer', allTileSets)
-            .setCollisionByProperty({ collides: true });
+            .setCollisionByProperty({ collides: true }).setPipeline('Light2D');
 
         return this.tileMap;
 
@@ -341,8 +467,61 @@ export default class Overworld extends Phaser.Scene {
     create() {
 
 
-        this.scene.launch('Status')
+        this.tweens.add({
+            targets: this.sound,
+            duration: 3000,
+            volume: { from: 1, to: 0 },
+            ease: 'easeInOut',
+            onComplete: () => {
+                this.sound.stopAll();
+                this.tweens.add({
+                    delay: 1000,
+                    targets: this.sound,
+                    duration: 3000,
+                    volume: { from: 0, to: 1 },
+                    ease: 'easeInOut',
+                    onComplete: () => {
+                        this.sound.play("beach", { volume: 0.06, loop: true });
+                    }
+                })
+            }
+        })
 
+
+        let birdgroup = this.physics.add.group({
+            classType: Bird,
+        })
+
+        this.time.addEvent({
+            delay: 17000,
+            callback: () => {
+                for (let i = 0; i < Phaser.Math.Between(1, 2); i++) {
+                    let bird = birdgroup.get(Phaser.Math.Between(10, 1077), Phaser.Math.Between(800, 1100), "birds")
+                        .setPipeline('Light2D').setScale(.3).setDepth(5)
+                    bird.anims.play('whiteflyup', true)
+                    bird.setVelocity(Phaser.Math.Between(2, -2), Phaser.Math.Between(-10, -25));
+                    let speedRoot = Phaser.Math.Between(4, 6);
+                    bird.anims.currentAnim.frameRate = speedRoot;
+                }
+            },
+            loop: true
+        })
+
+
+        this.time.addEvent({
+            delay: 32000,
+            callback: () => {
+                for (let i = 0; i < Phaser.Math.Between(1, 2); i++) {
+                    let bird = birdgroup.get(Phaser.Math.Between(10, 1100), Phaser.Math.Between(0, 0), "birds")
+                        .setPipeline('Light2D').setScale(.2).setDepth(5)
+                    bird.anims.play('brownflydown', true)
+                    bird.setVelocity(Phaser.Math.Between(2, -2), Phaser.Math.Between(5, 14));
+                    let speedRoot = Phaser.Math.Between(4, 6);
+                    bird.anims.currentAnim.frameRate = speedRoot;
+                }
+            },
+            loop: true
+        })
 
         this.events.addListener('player-click-level1', () => {
             console.log('acting onevent')
@@ -356,7 +535,6 @@ export default class Overworld extends Phaser.Scene {
                 onComplete: () => {
                     this.scene.pause('Overworld');
                     this.scene.start("Level");
-
                 }
             })
         });
@@ -371,7 +549,22 @@ export default class Overworld extends Phaser.Scene {
         this.tileMap = this.createLevel();
 
         //get objects from tilemap
-        let buildings = this.tileMap.getObjectLayer("Buildings");
+      
+        let deer = this.physics.add.group({
+            classType: Deer,
+            collideWorldBounds: true,
+        })
+
+
+
+        let monk = this.physics.add.group({
+            classType: Monk,
+            collideWorldBounds: true,
+        })
+
+
+        let storyUnits = this.tileMap.getObjectLayer("StoryUnits");
+
         let windDirX = Phaser.Math.Between(2, 10)
         let windDirY = Phaser.Math.Between(2, 10)
         let numClouds = Phaser.Math.Between(5, 10)
@@ -381,18 +574,88 @@ export default class Overworld extends Phaser.Scene {
         }
 
 
+        
+        let buildings = this.tileMap.getObjectLayer("Buildings");
+        let lightstructures = this.tileMap.getObjectLayer("LightStructures");
+        let wildlife = this.tileMap.getObjectLayer("Wildlife");
+
+
+        if (wildlife) {
+            wildlife.objects.forEach(object => {
+                if (object.x && object.y) {
+                    deer.get(object.x, object.y, "enemy-deer", "DeerIdle1.png")
+                        .setDepth(5).setScale(.5).setPipeline('Light2D').actions.setState(DeerStates.Idle)
+                }
+            })
+        }
+        if (storyUnits) {
+            storyUnits.objects.forEach(unit => {
+                if (unit.name == "enemy-monk") {
+                    if (unit.x && unit.y) {
+                        monk.get(unit.x, unit.y, "enemy-monk", "MonkIdle1.png")
+                            .setDepth(5).setPipeline('Light2D').setScale(.5).actions.setState(MonkStates.Idle)
+
+                    }
+                }
+
+            })
+        }
+        if (lightstructures) {
+
+            lightstructures.objects.forEach(lightobj => {
+                if (lightobj.name == "Campfire") {
+                    if (lightobj.x && lightobj.y) {
+                        this.add.sprite(lightobj.x, lightobj.y, "campfire").setScale(1.0).setDepth(3).play("campfire-action").setPipeline("Light2D");
+                        this.lights.addLight(lightobj.x, lightobj.y, 100, 0xe25822, 1);
+                        this.lights.addLight(lightobj.x, lightobj.y, 50, 0xe73822, 4);
+                    }
+                }
+                if (lightobj.name == "CampfireEast") {
+                    if (lightobj.x && lightobj.y) {
+                        this.add.sprite(lightobj.x, lightobj.y, "campfire").setScale(1.0).setDepth(3).play("campfire-action").setPipeline("Light2D");
+                        this.lights.addLight(lightobj.x, lightobj.y, 150, 0xe25822, 1);
+                    }
+                }
+                if (lightobj.name == "Workshop") {
+                    if (lightobj.x && lightobj.y) {
+                        this.lights.addLight(lightobj.x, lightobj.y, 50, 0xe25822, 1);
+                    }
+                }
+
+
+            })
+
+        }
         if (buildings) {
             buildings.objects.forEach(object => {
-                let labzone = this.add.rectangle(object.x, object.y, object.width, object.height).setOrigin(0, 0).setDepth(3).setInteractive();
-                labzone.fillColor = 0x000000;
-                labzone.fillAlpha = 0.5;
+                if (object.name == "Labyrinth") {
+                    let labzone = this.add.rectangle(object.x, object.y, object.width, object.height).setOrigin(0, 0).setDepth(3).setInteractive();
+                    labzone.fillColor = 0x000000;
+                    labzone.fillAlpha = 0.5;
 
-                labzone.setInteractive();
-                labzone.on('pointerup', () => {
-                    console.log("labyrinth clicked")
-                    this.events.emit('player-click-level1')
-                })
-                console.log("building found : " + object.x + " " + object.y);
+                    labzone.setInteractive();
+                    labzone.on('pointerup', () => {
+                        console.log("labyrinth clicked")
+                        this.events.emit('player-click-level1')
+                    })
+                    console.log("building found : " + object.x + " " + object.y);
+                } else if (object.name == "FontainOfMagic") {
+                    if (object.x && object.y) {
+                        this.add.sprite(object.x, object.y, "FontainOfMagic")
+                            .setOrigin(0.5, 0.5).setDepth(3).
+                            play("fontainofmagic-action").setScale(1.5).setPipeline("Light2D");
+                    }
+
+                } else if (object.name == "Stables") {
+                    if (object.x && object.y) {
+                        this.add.sprite(object.x, object.y, "Stables")
+                            .setOrigin(0.5, 0.5).setDepth(3).play("stables-action")
+                            .setScale(1).setPipeline("Light2D");
+                    }
+                }
+
+
+
             })
         }
 
@@ -454,7 +717,7 @@ export default class Overworld extends Phaser.Scene {
     }
 
 
-    update() {
+    update(dt: number) {
 
     }
 }

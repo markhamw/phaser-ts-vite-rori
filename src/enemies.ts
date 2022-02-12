@@ -1,169 +1,26 @@
 
-
 import Phaser from "phaser";
-import { Direction } from "./globalHelpers";
 
 
-export default class Unit
-    extends Phaser.Physics.Arcade.Sprite  {
-    facing = 8;
-    enemydata: IEnemyData
-    hit: number = 0;
-    inBattle: boolean = false;
-    roam?: boolean;
-    startingX: number;
-    startingY: number;
-    constructor(
-        scene: Phaser.Scene,
-        x: number,
-        y: number,
-        texture: string,
-        data: IEnemyData,
-        frame?: string | number,
-    ) {
-        super(scene, x, y, texture, frame);
-        this.enemydata = data
- 
-        this.startingX = x;
-        this.startingY = y;
-
-        InitAnims(this)
-        CollideWithOverWorldAndPlayer(this, this.scene);
-        this.setInteractive();
-        this.play(this.enemydata!.IdleAnimKey);
-
-    }
-    Move() {
-        if (Phaser.Math.FloorTo(Phaser.Math.Distance.Between(this.x, this.y, this.startingX, this.startingY)) > 50) {
-            this.setVelocity(0);
-
-        }
-
-        let chanceForIdle = Phaser.Math.Between(0, 4);
-        if (chanceForIdle == 1 || 2 || 3) {
-            this.facing = 8;
-            //  Stop(this.scene, this)
-            this.play(this.enemydata!.IdleAnimKey);
-        } else {
-            this.facing = Phaser.Math.Between(0, 7);
-            this.enemydata!.speed = Phaser.Math.Between(4, 5);
-        }
-    }
-
-
-    /*     handleCollision(
-            go: Phaser.GameObjects.GameObject,
-            tile: Phaser.Tilemaps.Tile
-        ) {
-            Stop(this, go)
-    
-        } */
-
-    /*     handleCollisionWithSprite(
-            unit: Phaser.GameObjects.GameObject,
-            obj2: Phaser.GameObjects.GameObject
-        ) {
-            console.log("emitting hit event")
-            this.scene.events.emit('enemy-collision', this, obj2);
-            console.log(this, obj2)
-        } */
-
-    preload() {
-        this.scene.load.atlas(this.enemydata!.name, this.enemydata!.PathToPNG, this.enemydata!.PathToJSON)
-    }
-
-    create() {
-        this.scene.time.addEvent({
-            delay: Phaser.Math.Between(4000, 7000),
-            callback: () => {
-                this.Move()
-            },
-            repeat: -1,
-        });
-    }
-
-    decideMovement() {
-
-        switch (this.facing) {
-            case Direction.UP:
-                this.setVelocity(0, -this.enemydata!.speed)
-                AnimatedEnemyWalk(this)
-                break
-            case Direction.DOWN:
-                this.setVelocity(0, this.enemydata!.speed)
-                AnimatedEnemyWalk(this)
-                break
-            case Direction.LEFT:
-                this.setVelocity(-this.enemydata!.speed, 0)
-                AnimatedEnemyWalk(this)
-                this.flipX = true;
-                break
-            case Direction.RIGHT:
-                this.setVelocity(this.enemydata!.speed, 0)
-                AnimatedEnemyWalk(this)
-                break
-            case Direction.LEFTANDUP:
-                this.setVelocity(-this.enemydata!.speed, -this.enemydata!.speed)
-                AnimatedEnemyWalk(this)
-                this.flipX = true;
-                break
-            case Direction.LEFTANDDOWN:
-                this.setVelocity(-this.enemydata!.speed, this.enemydata!.speed)
-                AnimatedEnemyWalk(this)
-                this.flipX = true;
-                break
-            case Direction.RIGHTANDUP:
-                this.setVelocity(this.enemydata!.speed, -this.enemydata!.speed)
-                AnimatedEnemyWalk(this)
-                break
-            case Direction.RIGHTANDDOWN:
-                this.setVelocity(this.enemydata!.speed, this.enemydata!.speed)
-                AnimatedEnemyWalk(this)
-                break
-            case Direction.IDLE:
-                this.setVelocity(0, 0)
-                //1 to 50 because its using delta time
-                let chanceforIdleAnim = Phaser.Math.Between(0, 200);
-                if (chanceforIdleAnim == 1) {
-                    AnimatedEnemyIdle(this);
-                } else {
-                    if (chanceforIdleAnim > 0 && chanceforIdleAnim < 15) {
-                        this.facing = Phaser.Math.Between(0, 7);
-                        this.enemydata!.speed = Phaser.Math.Between(0, 1);
-                    }
-
-                }
-
-                break
-        }
-    }
-    distanceFrom(obj: Phaser.GameObjects.Sprite): number {
-        return Phaser.Math.FloorTo(Phaser.Math.Distance.Between(this.x, this.y, obj.x, obj.y))
-    }
-    preUpdate(t: number, dt: number) {
-        this.flipX = false;
-        super.preUpdate(t, dt);
-
-        if (this.hit > 0) {
-            console.log('being hit')
-            ++this.hit;
-            if (this.hit > 8) {
-                this.hit = 0;
-            }
-            return
-        } else {
-            if (this.active) {
-                if (this.roam) {
-                    this.decideMovement();
-                }
-
-            }
-        }
-
-
-    }
+export type IOverworldEnemy = {
+    SpriteAtlasKey: string;
+    IconPng: string;
+    descriptiveName: string;
+    PathToPNG: string;
+    PathToJSON: string;
+    JsonPrefixIdle: string;
+    JsonPrefixWalk: string;
+    JsonPrefixAttack: string;
+    JsonPrefixHit: string;
+    JsonPrefixDeath: string;
+    IdleAnimKey: string;
+    WalkAnimKey: string;
+    HitAnimKey: string;
+    AttackAnimKey: string;
+    DeathAnimKey: string;
+    PlayerInteractionLines?: string[];
+    ResponseToPlayerLines?: string[];
 }
-
 
 export type IEnemyData = {
     name: string;
@@ -187,14 +44,14 @@ export type IEnemyData = {
     ResponseToPlayerLines?: string[];
 }
 
-export const enemies: IEnemyData[] = [
+export const enemies: IOverworldEnemy[] = [
     {
-        name: "enemy-titan",
-        PathToPNG: "enemies/titan.png",
-        PathToJSON: "enemies/titan.json",
+
+        PathToPNG: "assets/overworld/enemies/titan.png",
+        PathToJSON: "assets/overworld/enemies/titan.json",
         IconPng: "IconTitan.png",
         descriptiveName: "Titan",
-        speed: Phaser.Math.Between(1, 5),
+
         SpriteAtlasKey: "enemy-titan",
         JsonPrefixIdle: "TitanIdle",
         JsonPrefixWalk: "TitanWalk",
@@ -210,12 +67,12 @@ export const enemies: IEnemyData[] = [
         ResponseToPlayerLines: ["Hmmrrrff", "Urrnkk", "Dink"]
     },
     {
-        name: "enemy-golem",
-        PathToPNG: "enemies/golem.png",
-        PathToJSON: "enemies/golem.json",
+
+        PathToPNG: "assets/overworld/enemies/golem.png",
+        PathToJSON: "assets/overworld/enemies/golem.json",
         IconPng: "IconGolem.png",
         descriptiveName: "Golem",
-        speed: Phaser.Math.Between(1, 5),
+
         JsonPrefixIdle: "GolemIdle",
         JsonPrefixWalk: "GolemWalk",
         JsonPrefixAttack: "GolemAttack",
@@ -232,12 +89,12 @@ export const enemies: IEnemyData[] = [
 
     },
     {
-        name: "enemy-groklin",
+
         descriptiveName: "Groklin",
-        speed: Phaser.Math.Between(0, 5),
+
         IconPng: "IconGremlin.png",
-        PathToPNG: "enemies/groklin.png",
-        PathToJSON: "enemies/groklin.json",
+        PathToPNG: "assets/overworld/enemies/groklin.png",
+        PathToJSON: "assets/overworld/enemies/groklin.json",
         JsonPrefixIdle: "GremlinIdle",
         JsonPrefixWalk: "GremlinWalk",
         JsonPrefixAttack: "GremlinAttack",
@@ -253,12 +110,12 @@ export const enemies: IEnemyData[] = [
         ResponseToPlayerLines: ["Gods damn you!", "Be damned to the wastes", "I dont even like you a little bit"]
     },
     {
-        name: "enemy-skeleton",
+
         descriptiveName: "Skeleton",
-        speed: Phaser.Math.Between(1, 1),
+
         IconPng: "IconSkeleton.png",
-        PathToPNG: "enemies/skeleton.png",
-        PathToJSON: "enemies/skeleton.json",
+        PathToPNG: "assets/overworld/enemies/skeleton.png",
+        PathToJSON: "assets/overworld/enemies/skeleton.json",
         JsonPrefixIdle: "SkeletonIdle",
         JsonPrefixWalk: "SkeletonWalk",
         JsonPrefixAttack: "SkeletonAttack",
@@ -275,12 +132,12 @@ export const enemies: IEnemyData[] = [
 
     },
     {
-        name: "enemy-efreet",
+
         descriptiveName: "Efreet",
-        speed: Phaser.Math.Between(1, 1),
+
         IconPng: "IconEfreet.png",
-        PathToPNG: "enemies/efreet.png",
-        PathToJSON: "enemies/efreet.json",
+        PathToPNG: "assets/overworld/enemies/efreet.png",
+        PathToJSON: "assets/overworld/enemies/efreet.json",
         JsonPrefixIdle: "EfreetIdle",
         JsonPrefixWalk: "EfreetWalk",
         JsonPrefixAttack: "EfreetAttack",
@@ -297,12 +154,12 @@ export const enemies: IEnemyData[] = [
 
     },
     {
-        name: "enemy-centaur",
+
         descriptiveName: "Centaur",
-        speed: Phaser.Math.Between(1, 1),
+
         IconPng: "IconCentaur.png",
-        PathToPNG: "enemies/centaur.png",
-        PathToJSON: "enemies/centaur.json",
+        PathToPNG: "assets/overworld/enemies/centaur.png",
+        PathToJSON: "assets/overworld/enemies/centaur.json",
         JsonPrefixIdle: "CentaurIdle",
         JsonPrefixWalk: "CentaurWalk",
         JsonPrefixAttack: "CentaurAttack",
@@ -318,18 +175,16 @@ export const enemies: IEnemyData[] = [
         ResponseToPlayerLines: ["*clop clop clop* Hahaha", "Youre two legs arent as good as one of mine, human. Hmf.", "Get behind me and see what happens. Youll be eating hoof"]
     },
     {
-        name: "enemy-monk",
+        SpriteAtlasKey: "enemy-monk",
         descriptiveName: "Monk",
-        speed: Phaser.Math.Between(2, 3),
         IconPng: "IconMonk.png",
-        PathToPNG: "enemies/monk.png",
-        PathToJSON: "enemies/monk.json",
+        PathToPNG: "assets/overworld/enemies/monk.png",
+        PathToJSON: "assets/overworld/enemies/monk.json",
         JsonPrefixIdle: "MonkIdle",
         JsonPrefixWalk: "MonkWalk",
         JsonPrefixAttack: "MonkAttack",
         JsonPrefixHit: "MonkHit",
         JsonPrefixDeath: "MonkDeath",
-        SpriteAtlasKey: "enemy-monk",
         IdleAnimKey: "enemy-monk-idle",
         WalkAnimKey: "enemy-monk-walk",
         HitAnimKey: "enemy-monk-hit",
@@ -339,12 +194,12 @@ export const enemies: IEnemyData[] = [
         ResponseToPlayerLines: ["I agree", "Yes, yes, yes....", "I dont know what to say"]
     },
     {
-        name: "enemy-pitfiend",
+
         descriptiveName: "PitFiend",
-        speed: Phaser.Math.Between(2, 3),
+
         IconPng: "IconPitFiend.png",
-        PathToPNG: "enemies/pitfiend.png",
-        PathToJSON: "enemies/pitfiend.json",
+        PathToPNG: "assets/overworld/enemies/pitfiend.png",
+        PathToJSON: "assets/overworld/enemies/pitfiend.json",
         JsonPrefixIdle: "PitFiendIdle",
         JsonPrefixWalk: "PitFiendWalk",
         JsonPrefixAttack: "PitFiendAttack",
@@ -360,12 +215,12 @@ export const enemies: IEnemyData[] = [
         ResponseToPlayerLines: ["You will not pass by", "I look very scary but I think I could try to make friends. Be my friend and you can pass", "I dont know what to say except turn back, turn back now"]
     },
     {
-        name: "enemy-ghost",
+
         descriptiveName: "Ghost",
-        speed: Phaser.Math.Between(2, 3),
+
         IconPng: "IconGhost.png",
-        PathToPNG: "enemies/ghost.png",
-        PathToJSON: "enemies/ghost.json",
+        PathToPNG: "assets/overworld/enemies/ghost.png",
+        PathToJSON: "assets/overworld/enemies/ghost.json",
         JsonPrefixIdle: "GhostIdle",
         JsonPrefixWalk: "GhostWalk",
         JsonPrefixAttack: "GhostAttack",
@@ -381,12 +236,12 @@ export const enemies: IEnemyData[] = [
         ResponseToPlayerLines: ["You can run but Ill find you", "Dont be surprised but ima to kill you", "GTFO!"]
     },
     {
-        name: "enemy-deer",
+
         descriptiveName: "Deer",
-        speed: Phaser.Math.Between(5, 9),
+
         IconPng: "IconDeer.png",
-        PathToPNG: "enemies/deer.png",
-        PathToJSON: "enemies/deer.json",
+        PathToPNG: "assets/overworld/enemies/deer.png",
+        PathToJSON: "assets/overworld/enemies/deer.json",
         JsonPrefixIdle: "DeerIdle",
         JsonPrefixWalk: "DeerWalk",
         JsonPrefixAttack: "DeerAttack",
@@ -401,12 +256,12 @@ export const enemies: IEnemyData[] = [
         PlayerInteractionLines: ["Oh deer", "Hi my deer", "Its a deer", "A typical deer"],
     },
     {
-        name: "enemy-pixie",
+
         descriptiveName: "Pixie",
-        speed: Phaser.Math.Between(5, 9),
+
         IconPng: "IconPixie.png",
-        PathToPNG: "enemies/pixie.png",
-        PathToJSON: "enemies/pixie.json",
+        PathToPNG: "assets/overworld/enemies/pixie.png",
+        PathToJSON: "assets/overworld/enemies/pixie.json",
         JsonPrefixIdle: "PixieIdle",
         JsonPrefixWalk: "PixieWalk",
         JsonPrefixAttack: "PixieAttack",
@@ -421,12 +276,12 @@ export const enemies: IEnemyData[] = [
         PlayerInteractionLines: ["Oh it LOOKS innocent", "leaving it alone", "Its a pixie", "A typical pixie"],
     },
     {
-        name: "enemy-spider",
+
         descriptiveName: "Spider",
-        speed: Phaser.Math.Between(5, 9),
+
         IconPng: "IconSpider.png",
-        PathToPNG: "enemies/spider.png",
-        PathToJSON: "enemies/spider.json",
+        PathToPNG: "assets/overworld/enemies/spider.png",
+        PathToJSON: "assets/overworld/enemies/spider.json",
         JsonPrefixIdle: "SpiderIdle",
         JsonPrefixWalk: "SpiderWalk",
         JsonPrefixAttack: "SpiderAttack",
@@ -441,12 +296,12 @@ export const enemies: IEnemyData[] = [
         PlayerInteractionLines: ["I dont think so", "Nooope", "MmmMmm *shakes head*", "A typical spider. Bye felicia!"],
     },
     {
-        name: "enemy-naga",
+
         descriptiveName: "Naga",
-        speed: Phaser.Math.Between(5, 9),
+
         IconPng: "IconNaga.png",
-        PathToPNG: "enemies/naga.png",
-        PathToJSON: "enemies/naga.json",
+        PathToPNG: "assets/overworld/enemies/naga.png",
+        PathToJSON: "assets/overworld/enemies/naga.json",
         JsonPrefixIdle: "NagaIdle",
         JsonPrefixWalk: "NagaWalk",
         JsonPrefixAttack: "NagaAttack",
@@ -461,12 +316,12 @@ export const enemies: IEnemyData[] = [
         PlayerInteractionLines: ["Wanda?", "Im naga do it..nope", "Nah...ga", "Ok thats a naga", "A typical naga"],
     },
     {
-        name: "enemy-troll",
+
         descriptiveName: "Troll",
-        speed: Phaser.Math.Between(5, 9),
+
         IconPng: "IconTroll.png",
-        PathToPNG: "enemies/troll.png",
-        PathToJSON: "enemies/troll.json",
+        PathToPNG: "assets/overworld/enemies/troll.png",
+        PathToJSON: "assets/overworld/enemies/troll.json",
         JsonPrefixIdle: "TrollIdle",
         JsonPrefixWalk: "TrollWalk",
         JsonPrefixAttack: "TrollAttack",
@@ -481,12 +336,12 @@ export const enemies: IEnemyData[] = [
         PlayerInteractionLines: ["Okay? Okay. You dont speak much", "", "Ok thats a troll.", "A typical troll"],
     },
     {
-        name: "enemy-treant",
+
         descriptiveName: "Treant",
-        speed: Phaser.Math.Between(5, 9),
+
         IconPng: "IconTreant.png",
-        PathToPNG: "enemies/treant.png",
-        PathToJSON: "enemies/treant.json",
+        PathToPNG: "assets/overworld/enemies/treant.png",
+        PathToJSON: "assets/overworld/enemies/treant.json",
         JsonPrefixIdle: "TreantIdle",
         JsonPrefixWalk: "TreantWalk",
         JsonPrefixAttack: "TreantAttack",
@@ -501,12 +356,12 @@ export const enemies: IEnemyData[] = [
         PlayerInteractionLines: ["Treefolk do not exist", "Pretty good special effects now eff off", "Thats a moving obviously sentient sandlewood tree person, and its sassy looking", "A typical treant"],
     },
     {
-        name: "enemy-lich",
+
         descriptiveName: "Lich",
-        speed: Phaser.Math.Between(5, 9),
+
         IconPng: "IconLich.png",
-        PathToPNG: "enemies/lich.png",
-        PathToJSON: "enemies/lich.json",
+        PathToPNG: "assets/overworld/enemies/lich.png",
+        PathToJSON: "assets/overworld/enemies/lich.json",
         JsonPrefixIdle: "LichIdle",
         JsonPrefixWalk: "LichWalk",
         JsonPrefixAttack: "LichAttack",
@@ -521,12 +376,12 @@ export const enemies: IEnemyData[] = [
         PlayerInteractionLines: ["reallly?", "a typical lich", "I dont think so", "Nope", "Nope", "Nope"],
     },
     {
-        name: "enemy-zombie",
+
         descriptiveName: "Zombie",
-        speed: Phaser.Math.Between(5, 9),
+
         IconPng: "IconZombie.png",
-        PathToPNG: "enemies/zombie.png",
-        PathToJSON: "enemies/zombie.json",
+        PathToPNG: "assets/overworld/enemies/zombie.png",
+        PathToJSON: "assets/overworld/enemies/zombie.json",
         JsonPrefixIdle: "ZombieIdle",
         JsonPrefixWalk: "ZombieWalk",
         JsonPrefixAttack: "ZombieAttack",
@@ -716,8 +571,8 @@ export interface AnimatedEnemy extends Phaser.Physics.Arcade.Sprite {
 
 export interface Collides extends Phaser.Physics.Arcade.Sprite {
     CollideWithOverWorldAndPlayer(): void;
-/*     handleCollision(player: Player): void;
-    handleCollisionWithSprite(sprite: Phaser.Physics.Arcade.Sprite): void; */
+    /*     handleCollision(player: Player): void;
+        handleCollisionWithSprite(sprite: Phaser.Physics.Arcade.Sprite): void; */
 }
 
 export const CollideWithOverWorldAndPlayer = (sprite: any, scene: any) => {
@@ -801,31 +656,6 @@ export const DeathAnim = (sprite: any) => {
 }
 
 
-export function AnimatedEnemyIdle(sprite: any) {
-    sprite.anims.play(sprite.enemydata.IdleAnimKey, true);
-}
-export function AnimatedEnemyWalk(sprite: any) {
-    sprite.anims.play(sprite.enemydata.WalkAnimKey, true);
-}
-export function AnimatedEnemyAttack(sprite: any) {
-    sprite.anims.play(sprite.enemydata.AttackAnimKey, true);
-}
-export function AnimatedEnemyHit(sprite: any) {
-    sprite.anims.play(sprite.enemydata.HitAnimKey, true);
-}
-export function AnimatedEnemyDeath(sprite: any) {
-    sprite.anims.play(sprite.enemydata.DeathAnimKey, true);
-}
-
-export function InitAnims(sprite: any): void {
-    IdleAnim(sprite);
-    WalkAnim(sprite);
-    AttackAnim(sprite);
-    HitAnim(sprite);
-    DeathAnim(sprite);
-}
-
-
 export const newEnemyGroup = (scene: Phaser.Scene, type: any, collides: boolean, collideWorldBounds: boolean) => {
     return scene.physics.add.group({
         classType: type,
@@ -836,7 +666,5 @@ export const newEnemyGroup = (scene: Phaser.Scene, type: any, collides: boolean,
         collideWorldBounds: collideWorldBounds,
     });
 }
-
-
 
 

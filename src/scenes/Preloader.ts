@@ -1,3 +1,4 @@
+import { enemies, IOverworldEnemy } from "../enemies";
 
 
 
@@ -22,6 +23,7 @@ export default class Preloader extends Phaser.Scene {
 
         this.load.atlas('clouds', "assets/overworld/clouds.png", "assets/overworld/clouds.json")
         this.load.atlas('cloudsshadows', "assets/overworld/cloudshadows.png", "assets/overworld/cloudsshadows.json")
+        this.load.atlas('birds', "assets/birds.png", "assets/birds.json")
 
 
         //level1/cemetery
@@ -60,11 +62,13 @@ export default class Preloader extends Phaser.Scene {
         this.load.image("roads", "tilesets/roads.png")
         this.load.image("uiatlas", "tilesets/UI_atlas.png")
         this.load.image("allbuildings", "tilesets/allbuildingtileset.png")
+        this.load.image("allbiomes", "tilesets/AllBiomes.png")
 
         this.load.image('grass1', "tilesets/grass1.png")
         this.load.image('grass2', "tilesets/grass2.png")
         this.load.image('grass3', "tilesets/grass3.png")
 
+        this.load.atlas('allbuildingsatlas', "assets/allbuildingsatlas.png", "assets/allbuildingsatlas.json")
 
 
         // this.load.audio('step1', ["assets/footstep01.mp3"])
@@ -179,9 +183,9 @@ export default class Preloader extends Phaser.Scene {
         /*   //particles
           this.load.image("blueparticle", "assets/blue.png")
    */
-        /* enemies.forEach((enemy: any) => {
-            this.load.atlas(enemy.name, enemy.PathToPNG, enemy.PathToJSON)
-        }) */
+        enemies.forEach((enemy: IOverworldEnemy) => {
+            this.load.atlas(enemy.SpriteAtlasKey, enemy.PathToPNG, enemy.PathToJSON)
+        })
         /* 
                 this.load.audio('ratsound', ["assets/sounds/rat/ratscream.mp3"])
                 this.load.audio('knifeswipe', ["assets/knifeSwipe2.mp3"])
@@ -205,7 +209,7 @@ export default class Preloader extends Phaser.Scene {
                 this.load.audio('gato', ["assets/sounds/music/gatossongtrimmed.mp3"]) */
 
         this.load.audio('ruinedworld', ["assets/music/ruinedworld.mp3"])
-
+        this.load.audio('beach', ["assets/sounds/beach.mp3"])
         this.load.atlas('icons', "assets/icons.png", "assets/icons.json")
 
     }

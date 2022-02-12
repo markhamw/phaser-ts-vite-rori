@@ -1,0 +1,461 @@
+{
+	"textures": [
+		{
+			"image": "satyr.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 32,
+				"h": 118
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "IconSatyr.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "SatyrDeath1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 12,
+						"h": 16
+					},
+					"frame": {
+						"x": 19,
+						"y": 1,
+						"w": 12,
+						"h": 16
+					}
+				},
+				{
+					"filename": "SatyrHit2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 12,
+						"h": 16
+					},
+					"frame": {
+						"x": 19,
+						"y": 1,
+						"w": 12,
+						"h": 16
+					}
+				},
+				{
+					"filename": "SatyrWalk2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 14,
+						"h": 16
+					},
+					"frame": {
+						"x": 1,
+						"y": 19,
+						"w": 14,
+						"h": 16
+					}
+				},
+				{
+					"filename": "SatyrDeath2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 13,
+						"h": 16
+					},
+					"frame": {
+						"x": 17,
+						"y": 19,
+						"w": 13,
+						"h": 16
+					}
+				},
+				{
+					"filename": "SatyrAttack3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 2,
+						"w": 14,
+						"h": 14
+					},
+					"frame": {
+						"x": 1,
+						"y": 37,
+						"w": 14,
+						"h": 14
+					}
+				},
+				{
+					"filename": "SatyrHit3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 12,
+						"h": 16
+					},
+					"frame": {
+						"x": 17,
+						"y": 37,
+						"w": 12,
+						"h": 16
+					}
+				},
+				{
+					"filename": "SatyrIdle2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 12,
+						"h": 16
+					},
+					"frame": {
+						"x": 1,
+						"y": 53,
+						"w": 12,
+						"h": 16
+					}
+				},
+				{
+					"filename": "SatyrIdle3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 12,
+						"h": 16
+					},
+					"frame": {
+						"x": 1,
+						"y": 53,
+						"w": 12,
+						"h": 16
+					}
+				},
+				{
+					"filename": "SatyrWalk4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 12,
+						"h": 16
+					},
+					"frame": {
+						"x": 15,
+						"y": 55,
+						"w": 12,
+						"h": 16
+					}
+				},
+				{
+					"filename": "SatyrAttack1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 1,
+						"w": 12,
+						"h": 15
+					},
+					"frame": {
+						"x": 1,
+						"y": 71,
+						"w": 12,
+						"h": 15
+					}
+				},
+				{
+					"filename": "SatyrAttack4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 1,
+						"w": 12,
+						"h": 15
+					},
+					"frame": {
+						"x": 1,
+						"y": 71,
+						"w": 12,
+						"h": 15
+					}
+				},
+				{
+					"filename": "SatyrHit4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 1,
+						"w": 12,
+						"h": 15
+					},
+					"frame": {
+						"x": 1,
+						"y": 71,
+						"w": 12,
+						"h": 15
+					}
+				},
+				{
+					"filename": "SatyrDeath3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 2,
+						"w": 13,
+						"h": 14
+					},
+					"frame": {
+						"x": 15,
+						"y": 73,
+						"w": 13,
+						"h": 14
+					}
+				},
+				{
+					"filename": "SatyrHit1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 1,
+						"w": 12,
+						"h": 15
+					},
+					"frame": {
+						"x": 1,
+						"y": 88,
+						"w": 12,
+						"h": 15
+					}
+				},
+				{
+					"filename": "SatyrDeath4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 7,
+						"w": 16,
+						"h": 9
+					},
+					"frame": {
+						"x": 1,
+						"y": 105,
+						"w": 16,
+						"h": 9
+					}
+				},
+				{
+					"filename": "SatyrAttack2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 5,
+						"w": 13,
+						"h": 11
+					},
+					"frame": {
+						"x": 15,
+						"y": 89,
+						"w": 13,
+						"h": 11
+					}
+				},
+				{
+					"filename": "SatyrIdle1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 1,
+						"w": 12,
+						"h": 15
+					},
+					"frame": {
+						"x": 19,
+						"y": 102,
+						"w": 12,
+						"h": 15
+					}
+				},
+				{
+					"filename": "SatyrIdle4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 1,
+						"w": 12,
+						"h": 15
+					},
+					"frame": {
+						"x": 19,
+						"y": 102,
+						"w": 12,
+						"h": 15
+					}
+				},
+				{
+					"filename": "SatyrWalk1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 1,
+						"w": 12,
+						"h": 15
+					},
+					"frame": {
+						"x": 19,
+						"y": 102,
+						"w": 12,
+						"h": 15
+					}
+				},
+				{
+					"filename": "SatyrWalk3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 1,
+						"w": 12,
+						"h": 15
+					},
+					"frame": {
+						"x": 19,
+						"y": 102,
+						"w": 12,
+						"h": 15
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:e10bc38e99d3917c0d8b0f9e1ba37768:1e507e939a526e2bd78f36eeb424c3e7:ae976d04eb86fc92c00d6cf0d5407a51$"
+	}
+}

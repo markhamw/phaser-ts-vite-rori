@@ -4,7 +4,6 @@ import { playerData } from "../firebasedata/playerData";
 
 export default class Status extends Phaser.Scene {
 
-
     fontFamily: string = 'breathfire'
     titleAvatarSelect!: Phaser.GameObjects.Image;
     head!: Phaser.GameObjects.Sprite;
@@ -32,11 +31,7 @@ export default class Status extends Phaser.Scene {
         if (user){
             playerData.displayName = user.email as any;
         }
-       
-        let email = this.add.text(20, 0, `logged in: ${playerData.displayName})`, { fontSize: '20px', fontFamily: this.fontFamily, color: '#FFFFFF' })
-            .setShadow(4, 4, "#000000", 2, true, true).setAlign('center').setOrigin(0, 0)
 
-        email.setPosition(10, 0);
         let text1 = this.add.text(20, 0, `Status`, { fontSize: '50px', fontFamily: this.fontFamily, color: '#FFFFFF' })
             .setShadow(4, 4, "#000000", 2, true, true).setAlign('center').setOrigin(0, 0)
         text1.setPosition(10, 20);

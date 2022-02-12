@@ -195,7 +195,7 @@ export default class Level extends Phaser.Scene {
     setLights() {
         this.lights.enable();
         this.lights.setAmbientColor(0x222222);
-        this.lights.addLight(0, 0, 1000, 0x444444, 2);
+       this.lights.addLight(0, 0, 1000, 0x444444, 2);
     }
 
     showDebugWalls(): void {
@@ -208,7 +208,7 @@ export default class Level extends Phaser.Scene {
 
     }
     create() {
-     //   this.scale.setGameSize(1920, 1076)
+     this.scale.setGameSize(1920, 1076)
         this.scene.launch("Status");
         this.sound.play("cave1", { volume: 0.6, loop: true });
         this.keys = this.input.keyboard.createCursorKeys();
