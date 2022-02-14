@@ -1,0 +1,1448 @@
+{
+	"textures": [
+		{
+			"image": "groklin.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 253,
+				"h": 415
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "groklinattackone14.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 86,
+						"y": 27,
+						"w": 83,
+						"h": 79
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 83,
+						"h": 79
+					}
+				},
+				{
+					"filename": "groklinattackone13.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 86,
+						"y": 28,
+						"w": 82,
+						"h": 75
+					},
+					"frame": {
+						"x": 1,
+						"y": 82,
+						"w": 82,
+						"h": 75
+					}
+				},
+				{
+					"filename": "groklinattackone12.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 86,
+						"y": 31,
+						"w": 82,
+						"h": 71
+					},
+					"frame": {
+						"x": 86,
+						"y": 1,
+						"w": 82,
+						"h": 71
+					}
+				},
+				{
+					"filename": "groklinattackone11.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 86,
+						"y": 37,
+						"w": 74,
+						"h": 60
+					},
+					"frame": {
+						"x": 1,
+						"y": 159,
+						"w": 74,
+						"h": 60
+					}
+				},
+				{
+					"filename": "groklinattackone10.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 86,
+						"y": 50,
+						"w": 47,
+						"h": 41
+					},
+					"frame": {
+						"x": 170,
+						"y": 1,
+						"w": 47,
+						"h": 41
+					}
+				},
+				{
+					"filename": "groklinhit2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 65,
+						"y": 48,
+						"w": 33,
+						"h": 43
+					},
+					"frame": {
+						"x": 219,
+						"y": 1,
+						"w": 33,
+						"h": 43
+					}
+				},
+				{
+					"filename": "groklinattacktwo8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 68,
+						"y": 50,
+						"w": 43,
+						"h": 41
+					},
+					"frame": {
+						"x": 1,
+						"y": 221,
+						"w": 43,
+						"h": 41
+					}
+				},
+				{
+					"filename": "groklinattacktwo10.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 68,
+						"y": 56,
+						"w": 48,
+						"h": 35
+					},
+					"frame": {
+						"x": 1,
+						"y": 264,
+						"w": 48,
+						"h": 35
+					}
+				},
+				{
+					"filename": "groklinattacktwo9.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 68,
+						"y": 56,
+						"w": 47,
+						"h": 35
+					},
+					"frame": {
+						"x": 1,
+						"y": 301,
+						"w": 47,
+						"h": 35
+					}
+				},
+				{
+					"filename": "groklindeath3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 61,
+						"y": 49,
+						"w": 36,
+						"h": 42
+					},
+					"frame": {
+						"x": 1,
+						"y": 338,
+						"w": 36,
+						"h": 42
+					}
+				},
+				{
+					"filename": "groklindeath8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 68,
+						"y": 59,
+						"w": 25,
+						"h": 32
+					},
+					"frame": {
+						"x": 1,
+						"y": 382,
+						"w": 25,
+						"h": 32
+					}
+				},
+				{
+					"filename": "groklinwalk8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 67,
+						"y": 50,
+						"w": 25,
+						"h": 41
+					},
+					"frame": {
+						"x": 46,
+						"y": 221,
+						"w": 25,
+						"h": 41
+					}
+				},
+				{
+					"filename": "groklindeath2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 64,
+						"y": 48,
+						"w": 34,
+						"h": 43
+					},
+					"frame": {
+						"x": 170,
+						"y": 44,
+						"w": 34,
+						"h": 43
+					}
+				},
+				{
+					"filename": "groklinhit3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 66,
+						"y": 49,
+						"w": 32,
+						"h": 42
+					},
+					"frame": {
+						"x": 206,
+						"y": 46,
+						"w": 32,
+						"h": 42
+					}
+				},
+				{
+					"filename": "groklinattackone1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 67,
+						"y": 52,
+						"w": 26,
+						"h": 39
+					},
+					"frame": {
+						"x": 51,
+						"y": 264,
+						"w": 26,
+						"h": 39
+					}
+				},
+				{
+					"filename": "groklinattackone3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 64,
+						"y": 55,
+						"w": 28,
+						"h": 36
+					},
+					"frame": {
+						"x": 50,
+						"y": 305,
+						"w": 28,
+						"h": 36
+					}
+				},
+				{
+					"filename": "groklinattacktwo7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 63,
+						"y": 55,
+						"w": 33,
+						"h": 36
+					},
+					"frame": {
+						"x": 39,
+						"y": 343,
+						"w": 33,
+						"h": 36
+					}
+				},
+				{
+					"filename": "groklindeath5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 66,
+						"y": 58,
+						"w": 29,
+						"h": 33
+					},
+					"frame": {
+						"x": 39,
+						"y": 381,
+						"w": 29,
+						"h": 33
+					}
+				},
+				{
+					"filename": "groklindeath1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 64,
+						"y": 77,
+						"w": 28,
+						"h": 33
+					},
+					"frame": {
+						"x": 70,
+						"y": 381,
+						"w": 28,
+						"h": 33
+					}
+				},
+				{
+					"filename": "groklinattackone2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 67,
+						"y": 55,
+						"w": 25,
+						"h": 36
+					},
+					"frame": {
+						"x": 74,
+						"y": 343,
+						"w": 25,
+						"h": 36
+					}
+				},
+				{
+					"filename": "groklindeath11.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 64,
+						"y": 77,
+						"w": 28,
+						"h": 33
+					},
+					"frame": {
+						"x": 100,
+						"y": 381,
+						"w": 28,
+						"h": 33
+					}
+				},
+				{
+					"filename": "groklinwalk4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 68,
+						"y": 49,
+						"w": 25,
+						"h": 42
+					},
+					"frame": {
+						"x": 77,
+						"y": 159,
+						"w": 25,
+						"h": 42
+					}
+				},
+				{
+					"filename": "groklinhit4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 66,
+						"y": 51,
+						"w": 32,
+						"h": 40
+					},
+					"frame": {
+						"x": 73,
+						"y": 221,
+						"w": 32,
+						"h": 40
+					}
+				},
+				{
+					"filename": "groklinattacktwo13.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 66,
+						"y": 52,
+						"w": 26,
+						"h": 39
+					},
+					"frame": {
+						"x": 79,
+						"y": 263,
+						"w": 26,
+						"h": 39
+					}
+				},
+				{
+					"filename": "groklinattackone16.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 70,
+						"y": 54,
+						"w": 25,
+						"h": 37
+					},
+					"frame": {
+						"x": 80,
+						"y": 304,
+						"w": 25,
+						"h": 37
+					}
+				},
+				{
+					"filename": "groklinattacktwo2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 66,
+						"y": 55,
+						"w": 26,
+						"h": 36
+					},
+					"frame": {
+						"x": 101,
+						"y": 343,
+						"w": 26,
+						"h": 36
+					}
+				},
+				{
+					"filename": "groklindeath4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 64,
+						"y": 57,
+						"w": 33,
+						"h": 34
+					},
+					"frame": {
+						"x": 86,
+						"y": 74,
+						"w": 33,
+						"h": 34
+					}
+				},
+				{
+					"filename": "groklinhit5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 65,
+						"y": 52,
+						"w": 31,
+						"h": 39
+					},
+					"frame": {
+						"x": 85,
+						"y": 110,
+						"w": 31,
+						"h": 39
+					}
+				},
+				{
+					"filename": "groklinattackone8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 61,
+						"y": 56,
+						"w": 31,
+						"h": 35
+					},
+					"frame": {
+						"x": 121,
+						"y": 74,
+						"w": 31,
+						"h": 35
+					}
+				},
+				{
+					"filename": "groklinattackone6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 62,
+						"y": 56,
+						"w": 30,
+						"h": 35
+					},
+					"frame": {
+						"x": 118,
+						"y": 111,
+						"w": 30,
+						"h": 35
+					}
+				},
+				{
+					"filename": "groklinidle2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 66,
+						"y": 52,
+						"w": 26,
+						"h": 39
+					},
+					"frame": {
+						"x": 104,
+						"y": 151,
+						"w": 26,
+						"h": 39
+					}
+				},
+				{
+					"filename": "groklinhit7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 67,
+						"y": 53,
+						"w": 25,
+						"h": 38
+					},
+					"frame": {
+						"x": 132,
+						"y": 148,
+						"w": 25,
+						"h": 38
+					}
+				},
+				{
+					"filename": "groklinattackone4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 64,
+						"y": 56,
+						"w": 28,
+						"h": 35
+					},
+					"frame": {
+						"x": 150,
+						"y": 111,
+						"w": 28,
+						"h": 35
+					}
+				},
+				{
+					"filename": "groklinattacktwo4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 64,
+						"y": 56,
+						"w": 28,
+						"h": 35
+					},
+					"frame": {
+						"x": 150,
+						"y": 111,
+						"w": 28,
+						"h": 35
+					}
+				},
+				{
+					"filename": "groklinidle1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 66,
+						"y": 53,
+						"w": 27,
+						"h": 38
+					},
+					"frame": {
+						"x": 159,
+						"y": 148,
+						"w": 27,
+						"h": 38
+					}
+				},
+				{
+					"filename": "groklinwalk2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 70,
+						"y": 51,
+						"w": 24,
+						"h": 38
+					},
+					"frame": {
+						"x": 180,
+						"y": 89,
+						"w": 24,
+						"h": 38
+					}
+				},
+				{
+					"filename": "groklinattackone7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 62,
+						"y": 56,
+						"w": 30,
+						"h": 35
+					},
+					"frame": {
+						"x": 206,
+						"y": 90,
+						"w": 30,
+						"h": 35
+					}
+				},
+				{
+					"filename": "groklinidle3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 66,
+						"y": 53,
+						"w": 26,
+						"h": 38
+					},
+					"frame": {
+						"x": 188,
+						"y": 129,
+						"w": 26,
+						"h": 38
+					}
+				},
+				{
+					"filename": "groklinidle8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 68,
+						"y": 53,
+						"w": 25,
+						"h": 38
+					},
+					"frame": {
+						"x": 216,
+						"y": 127,
+						"w": 25,
+						"h": 38
+					}
+				},
+				{
+					"filename": "groklinattackone5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 63,
+						"y": 56,
+						"w": 29,
+						"h": 35
+					},
+					"frame": {
+						"x": 188,
+						"y": 169,
+						"w": 29,
+						"h": 35
+					}
+				},
+				{
+					"filename": "groklinattackone9.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 70,
+						"y": 54,
+						"w": 28,
+						"h": 37
+					},
+					"frame": {
+						"x": 219,
+						"y": 167,
+						"w": 28,
+						"h": 37
+					}
+				},
+				{
+					"filename": "groklinattacktwo5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 62,
+						"y": 56,
+						"w": 30,
+						"h": 35
+					},
+					"frame": {
+						"x": 132,
+						"y": 188,
+						"w": 30,
+						"h": 35
+					}
+				},
+				{
+					"filename": "groklinattacktwo11.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 70,
+						"y": 55,
+						"w": 22,
+						"h": 36
+					},
+					"frame": {
+						"x": 164,
+						"y": 188,
+						"w": 22,
+						"h": 36
+					}
+				},
+				{
+					"filename": "groklinwalk6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 69,
+						"y": 53,
+						"w": 23,
+						"h": 37
+					},
+					"frame": {
+						"x": 107,
+						"y": 192,
+						"w": 23,
+						"h": 37
+					}
+				},
+				{
+					"filename": "groklinwalk7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 67,
+						"y": 50,
+						"w": 25,
+						"h": 38
+					},
+					"frame": {
+						"x": 107,
+						"y": 231,
+						"w": 25,
+						"h": 38
+					}
+				},
+				{
+					"filename": "groklinhit8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 67,
+						"y": 54,
+						"w": 25,
+						"h": 37
+					},
+					"frame": {
+						"x": 107,
+						"y": 271,
+						"w": 25,
+						"h": 37
+					}
+				},
+				{
+					"filename": "groklindeath10.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 64,
+						"y": 77,
+						"w": 27,
+						"h": 31
+					},
+					"frame": {
+						"x": 107,
+						"y": 310,
+						"w": 27,
+						"h": 31
+					}
+				},
+				{
+					"filename": "groklindeath12.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 64,
+						"y": 77,
+						"w": 28,
+						"h": 33
+					},
+					"frame": {
+						"x": 134,
+						"y": 225,
+						"w": 28,
+						"h": 33
+					}
+				},
+				{
+					"filename": "groklinattacktwo6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 62,
+						"y": 56,
+						"w": 30,
+						"h": 35
+					},
+					"frame": {
+						"x": 134,
+						"y": 260,
+						"w": 30,
+						"h": 35
+					}
+				},
+				{
+					"filename": "groklindeath6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 68,
+						"y": 60,
+						"w": 26,
+						"h": 31
+					},
+					"frame": {
+						"x": 164,
+						"y": 226,
+						"w": 26,
+						"h": 31
+					}
+				},
+				{
+					"filename": "groklinattacktwo1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 67,
+						"y": 55,
+						"w": 25,
+						"h": 36
+					},
+					"frame": {
+						"x": 166,
+						"y": 259,
+						"w": 25,
+						"h": 36
+					}
+				},
+				{
+					"filename": "groklinhit6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 67,
+						"y": 56,
+						"w": 27,
+						"h": 35
+					},
+					"frame": {
+						"x": 136,
+						"y": 297,
+						"w": 27,
+						"h": 35
+					}
+				},
+				{
+					"filename": "groklinattacktwo12.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 66,
+						"y": 56,
+						"w": 26,
+						"h": 35
+					},
+					"frame": {
+						"x": 165,
+						"y": 297,
+						"w": 26,
+						"h": 35
+					}
+				},
+				{
+					"filename": "groklinattacktwo14.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 68,
+						"y": 55,
+						"w": 24,
+						"h": 36
+					},
+					"frame": {
+						"x": 129,
+						"y": 343,
+						"w": 24,
+						"h": 36
+					}
+				},
+				{
+					"filename": "groklindeath13.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 64,
+						"y": 77,
+						"w": 28,
+						"h": 33
+					},
+					"frame": {
+						"x": 130,
+						"y": 381,
+						"w": 28,
+						"h": 33
+					}
+				},
+				{
+					"filename": "groklinidle4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 67,
+						"y": 54,
+						"w": 25,
+						"h": 37
+					},
+					"frame": {
+						"x": 155,
+						"y": 334,
+						"w": 25,
+						"h": 37
+					}
+				},
+				{
+					"filename": "groklinattackone15.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 82,
+						"y": 54,
+						"w": 21,
+						"h": 37
+					},
+					"frame": {
+						"x": 160,
+						"y": 373,
+						"w": 21,
+						"h": 37
+					}
+				},
+				{
+					"filename": "groklinattacktwo15.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 67,
+						"y": 55,
+						"w": 25,
+						"h": 36
+					},
+					"frame": {
+						"x": 182,
+						"y": 334,
+						"w": 25,
+						"h": 36
+					}
+				},
+				{
+					"filename": "groklinattacktwo3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 67,
+						"y": 55,
+						"w": 25,
+						"h": 36
+					},
+					"frame": {
+						"x": 183,
+						"y": 372,
+						"w": 25,
+						"h": 36
+					}
+				},
+				{
+					"filename": "groklinhit1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 67,
+						"y": 55,
+						"w": 25,
+						"h": 36
+					},
+					"frame": {
+						"x": 192,
+						"y": 206,
+						"w": 25,
+						"h": 36
+					}
+				},
+				{
+					"filename": "groklinidle7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 69,
+						"y": 55,
+						"w": 24,
+						"h": 36
+					},
+					"frame": {
+						"x": 219,
+						"y": 206,
+						"w": 24,
+						"h": 36
+					}
+				},
+				{
+					"filename": "groklindeath9.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 65,
+						"y": 61,
+						"w": 30,
+						"h": 30
+					},
+					"frame": {
+						"x": 193,
+						"y": 244,
+						"w": 30,
+						"h": 30
+					}
+				},
+				{
+					"filename": "groklinidle5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 69,
+						"y": 56,
+						"w": 24,
+						"h": 35
+					},
+					"frame": {
+						"x": 193,
+						"y": 276,
+						"w": 24,
+						"h": 35
+					}
+				},
+				{
+					"filename": "groklindeath7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 68,
+						"y": 60,
+						"w": 25,
+						"h": 31
+					},
+					"frame": {
+						"x": 225,
+						"y": 244,
+						"w": 25,
+						"h": 31
+					}
+				},
+				{
+					"filename": "groklinwalk3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 69,
+						"y": 51,
+						"w": 24,
+						"h": 35
+					},
+					"frame": {
+						"x": 219,
+						"y": 277,
+						"w": 24,
+						"h": 35
+					}
+				},
+				{
+					"filename": "groklinidle6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 69,
+						"y": 58,
+						"w": 24,
+						"h": 33
+					},
+					"frame": {
+						"x": 209,
+						"y": 314,
+						"w": 24,
+						"h": 33
+					}
+				},
+				{
+					"filename": "groklinwalk5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 72,
+						"y": 56,
+						"w": 21,
+						"h": 35
+					},
+					"frame": {
+						"x": 210,
+						"y": 349,
+						"w": 21,
+						"h": 35
+					}
+				},
+				{
+					"filename": "groklinwalk1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 73,
+						"y": 56,
+						"w": 19,
+						"h": 35
+					},
+					"frame": {
+						"x": 233,
+						"y": 349,
+						"w": 19,
+						"h": 35
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:40373f825cf11ac3099ea7b6391f4a5b:a177817097a3fe1cb3cd9594aa3b5197:e899939869c67ae33d34583a14a183f7$"
+	}
+}

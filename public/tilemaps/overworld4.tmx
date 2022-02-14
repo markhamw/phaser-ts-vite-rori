@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.7.0" orientation="orthogonal" renderorder="right-down" width="120" height="67" tilewidth="16" tileheight="16" infinite="0" nextlayerid="16" nextobjectid="20">
+<map version="1.5" tiledversion="1.7.0" orientation="orthogonal" renderorder="right-down" width="120" height="67" tilewidth="16" tileheight="16" infinite="0" nextlayerid="17" nextobjectid="35">
  <editorsettings>
   <export target="overworld4.json" format="json"/>
  </editorsettings>
@@ -986,6 +986,11 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
+ <objectgroup id="16" name="Groklins">
+  <object id="26" x="661.818" y="640.091" width="14.9091" height="14.3636"/>
+  <object id="27" x="671.455" y="638.273" width="14.9091" height="14.3636"/>
+  <object id="34" x="673.273" y="631.364" width="14.9091" height="14.3636"/>
+ </objectgroup>
  <objectgroup id="12" name="Buildings">
   <object id="1" name="Labyrinth" x="592.25" y="605.75" width="48.25" height="32"/>
   <object id="3" name="FontainOfMagic" type="animated" x="357" y="430" width="2.5" height="4"/>

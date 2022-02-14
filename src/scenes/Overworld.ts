@@ -2,11 +2,13 @@
 import RexUIPlugin from "phaser3-rex-plugins/templates/ui/ui-plugin.js";
 import Bird, { BirdAnims } from "../characters/Bird";
 import Deer, { DeerStates } from "../characters/overworld/Deer";
+import GroklinOW, { GroklinStates } from "../characters/overworld/Groklin";
 import Monk, { MonkStates } from "../characters/overworld/Monk";
-
 import OverworldPlayer from "../characters/overworld/OverworldPlayer";
-import UnitActionsController from "../controllers/unit";
+import Player from "../characters/Player";
+//import UnitActionsController from "../controllers/unit";
 import StateMachine from "../controllers/unit";
+import { newEnemyGroup } from "../enemies";
 
 
 
@@ -44,15 +46,13 @@ export default class Overworld extends Phaser.Scene {
     rexUI!: RexUIPlugin;
     cloudGroup!: Phaser.GameObjects.Group;
     tileMap?: Phaser.Tilemaps.Tilemap;
+    pointerlight!: Phaser.GameObjects.Light;
 
     constructor() {
         super("Overworld");
-
-
     }
 
     AddCloudWithShadow = () => {
-
 
         let cloudPngNumberVariant = Phaser.Math.Between(1, 6);
         let cloudx = Phaser.Math.Between(0, 500);
@@ -114,20 +114,25 @@ export default class Overworld extends Phaser.Scene {
 
     preload() {
 
-        this.lights.enable();
-        this.lights.setAmbientColor(0x111111)
+        this.sound.stopByKey("gato");
+
+        this.sound.stopByKey("peoplewithouthope");
+
+        -
+            this.lights.enable();
+        this.lights.setAmbientColor(0x000000)
         //this.lights.addLight(200, 200, 1000, 0xffffff);
-        this.cameras.main.setZoom(2.0);
-        this.cameras.main.fadeIn(4000);
+        this.cameras.main.setZoom(3.0);
+        this.cameras.main.fadeIn(1000);
+
         this.cameras.main.setScroll(-300, 0);
         this.time.addEvent({
             delay: 3000,
             callback: () => {
-                this.cameras.main.zoomTo(4.5, 3000);
+                this.cameras.main.zoomTo(7.5, 2000);
             },
             loop: false
         })
-
 
 
         this.anims.create({
@@ -177,11 +182,6 @@ export default class Overworld extends Phaser.Scene {
             repeat: -1,
             frameRate: 8,
         });
-
-
-
-
-
 
 
         this.anims.create({
@@ -465,6 +465,30 @@ export default class Overworld extends Phaser.Scene {
 
 
     create() {
+        this.scene.launch('Status')
+        this.events.addListener('player-clicked-monk', () => {
+
+            this.scene.start('DefendTheMonk')
+
+        });
+        this.physics.add.group({
+            classType: Player,
+            collideWorldBounds: true,
+        })
+
+        /*       this.player = this.physics.add
+              .sprite(100, 200, "playeoverworld", "playeroverworld1.png")
+              .setPipeline("Light2D");
+         
+         
+              this.player.setCollideWorldBounds(true);
+          this.player.setBodySize(32, 32);
+          this.player.setDepth(3); */
+
+
+
+        this.pointerlight = this.lights.addLight(0, 0, 100, 0xffffff, 1);
+
 
 
         this.tweens.add({
@@ -473,7 +497,7 @@ export default class Overworld extends Phaser.Scene {
             volume: { from: 1, to: 0 },
             ease: 'easeInOut',
             onComplete: () => {
-                this.sound.stopAll();
+                // this.sound.stopAll();
                 this.tweens.add({
                     delay: 1000,
                     targets: this.sound,
@@ -481,7 +505,7 @@ export default class Overworld extends Phaser.Scene {
                     volume: { from: 0, to: 1 },
                     ease: 'easeInOut',
                     onComplete: () => {
-                        this.sound.play("beach", { volume: 0.06, loop: true });
+                        this.sound.play("beach", { volume: 0.03, loop: true });
                     }
                 })
             }
@@ -549,7 +573,7 @@ export default class Overworld extends Phaser.Scene {
         this.tileMap = this.createLevel();
 
         //get objects from tilemap
-      
+
         let deer = this.physics.add.group({
             classType: Deer,
             collideWorldBounds: true,
@@ -557,11 +581,19 @@ export default class Overworld extends Phaser.Scene {
 
 
 
-        let monk = this.physics.add.group({
-            classType: Monk,
+        let monk = newEnemyGroup(this, Monk)
+
+
+        monk.children.iterate(function (child) {
+            child.setInteractive();
+            child.once('pointerup', () => {
+                child.emit('player-click-monk');
+            })
+        })
+        let groklingroup = this.physics.add.group({
+            classType: GroklinOW,
             collideWorldBounds: true,
         })
-
 
         let storyUnits = this.tileMap.getObjectLayer("StoryUnits");
 
@@ -574,12 +606,22 @@ export default class Overworld extends Phaser.Scene {
         }
 
 
-        
+
         let buildings = this.tileMap.getObjectLayer("Buildings");
         let lightstructures = this.tileMap.getObjectLayer("LightStructures");
         let wildlife = this.tileMap.getObjectLayer("Wildlife");
+        let groklins = this.tileMap.getObjectLayer("Groklins");
 
+        if (groklins) {
+            groklins.objects.forEach(grok => {
+                if (grok.x && grok.y) {
+                    groklingroup.get(grok.x, grok.y, "enemy-groklin", "GremlinIdle1.png")
+                        .setScale(.5).setDepth(5)
+                        .setPipeline('Light2D').actions.setState(GroklinStates.Idle);
 
+                }
+            })
+        }
         if (wildlife) {
             wildlife.objects.forEach(object => {
                 if (object.x && object.y) {
@@ -595,6 +637,7 @@ export default class Overworld extends Phaser.Scene {
                         monk.get(unit.x, unit.y, "enemy-monk", "MonkIdle1.png")
                             .setDepth(5).setPipeline('Light2D').setScale(.5).actions.setState(MonkStates.Idle)
 
+
                     }
                 }
 
@@ -605,7 +648,7 @@ export default class Overworld extends Phaser.Scene {
             lightstructures.objects.forEach(lightobj => {
                 if (lightobj.name == "Campfire") {
                     if (lightobj.x && lightobj.y) {
-                        this.add.sprite(lightobj.x, lightobj.y, "campfire").setScale(1.0).setDepth(3).play("campfire-action").setPipeline("Light2D");
+                        this.add.sprite(lightobj.x, lightobj.y, "campfire").setScale(.5).setDepth(3).play("campfire-action").setPipeline("Light2D");
                         this.lights.addLight(lightobj.x, lightobj.y, 100, 0xe25822, 1);
                         this.lights.addLight(lightobj.x, lightobj.y, 50, 0xe73822, 4);
                     }
@@ -717,7 +760,13 @@ export default class Overworld extends Phaser.Scene {
     }
 
 
-    update(dt: number) {
+    update() {
+        /* if (this.pointerlight) {
 
+            this.pointerlight.x = this.input.mousePointer.worldX
+
+            this.pointerlight.y = this.input.mousePointer.worldY
+
+        } */
     }
 }

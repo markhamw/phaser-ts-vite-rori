@@ -120,6 +120,50 @@
         }, 
         {
          "draworder":"topdown",
+         "id":16,
+         "name":"Groklins",
+         "objects":[
+                {
+                 "height":14.3636,
+                 "id":26,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":14.9091,
+                 "x":661.817909090909,
+                 "y":640.091272727273
+                }, 
+                {
+                 "height":14.3636,
+                 "id":27,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":14.9091,
+                 "x":671.455,
+                 "y":638.273
+                }, 
+                {
+                 "height":14.3636,
+                 "id":34,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":14.9091,
+                 "x":673.272722727273,
+                 "y":631.363654545455
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
          "id":12,
          "name":"Buildings",
          "objects":[
@@ -242,7 +286,7 @@
                  "visible":true,
                  "width":19,
                  "x":549.5,
-                 "y":632.833333333333
+                 "y":632.833
                 }, 
                 {
                  "height":13.5,
@@ -252,7 +296,7 @@
                  "type":"",
                  "visible":true,
                  "width":19,
-                 "x":598.166666666667,
+                 "x":598.167,
                  "y":585.25
                 }, 
                 {
@@ -264,7 +308,7 @@
                  "visible":true,
                  "width":19,
                  "x":495.5,
-                 "y":639.916666666667
+                 "y":639.917
                 }, 
                 {
                  "height":13.5,
@@ -274,8 +318,8 @@
                  "type":"",
                  "visible":true,
                  "width":19,
-                 "x":598.166666666667,
-                 "y":492.583333333333
+                 "x":598.167,
+                 "y":492.583
                 }, 
                 {
                  "height":13.5,
@@ -285,8 +329,8 @@
                  "type":"",
                  "visible":true,
                  "width":19,
-                 "x":622.166666666667,
-                 "y":497.583333333333
+                 "x":622.167,
+                 "y":497.583
                 }, 
                 {
                  "height":13.5,
@@ -296,8 +340,8 @@
                  "type":"",
                  "visible":true,
                  "width":19,
-                 "x":605.166666666667,
-                 "y":480.583333333333
+                 "x":605.167,
+                 "y":480.583
                 }, 
                 {
                  "height":13.5,
@@ -318,8 +362,8 @@
                  "type":"",
                  "visible":true,
                  "width":19,
-                 "x":644.166666666667,
-                 "y":494.916666666667
+                 "x":644.167,
+                 "y":494.917
                 }, 
                 {
                  "height":13.5,
@@ -329,8 +373,8 @@
                  "type":"",
                  "visible":true,
                  "width":19,
-                 "x":643.166666666667,
-                 "y":462.916666666667
+                 "x":643.167,
+                 "y":462.917
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -338,8 +382,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":16,
- "nextobjectid":20,
+ "nextlayerid":17,
+ "nextobjectid":35,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.7.0",

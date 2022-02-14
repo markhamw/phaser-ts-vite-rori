@@ -656,14 +656,10 @@ export const DeathAnim = (sprite: any) => {
 }
 
 
-export const newEnemyGroup = (scene: Phaser.Scene, type: any, collides: boolean, collideWorldBounds: boolean) => {
+export const newEnemyGroup = (scene: Phaser.Scene, type: any) => {
     return scene.physics.add.group({
         classType: type,
-        createCallback: (gameObject) => {
-            const unit = gameObject as typeof type;
-            unit.body.onCollide = collides;
-        },
-        collideWorldBounds: collideWorldBounds,
+        collideWorldBounds: true,
     });
 }
 

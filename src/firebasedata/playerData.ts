@@ -5,8 +5,10 @@ class PlayerData {
     hp?: number
     mp?: number
     gold?: number
-    visits?:number
+    visits?: number
     islevel1complete?: boolean
+    x?:number
+    y?:number
     constructor() {
         makeAutoObservable(this);
     }

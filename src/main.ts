@@ -6,10 +6,11 @@ import RexUIPlugin from 'phaser3-rex-plugins/templates/ui/ui-plugin.js';
 import Level from './scenes/Level'
 import Status from './scenes/Status';
 import Overworld from './scenes/Overworld';
+import DefendTheMonk from './scenes/Encounters/DefendTheMonk';
 
 export default new Phaser.Game(
   {
-    scene: [Preloader,Overworld,Level,Status,Title],
+    scene: [Preloader, Overworld, DefendTheMonk, Level, Status, Title],
     plugins: {
       global: [{
         key: 'FirebasePlugin',
@@ -27,6 +28,7 @@ export default new Phaser.Game(
     autoFocus: true,
     antialias: false,
     backgroundColor: '#000000',
+    
     scale: {
       parent: 'app',
       mode: Phaser.Scale.FIT,
@@ -38,7 +40,7 @@ export default new Phaser.Game(
     physics: {
       default: 'arcade',
       arcade: {
-        debug: false,
+        debug: true,
       }
     },
 
