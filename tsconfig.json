@@ -3,7 +3,7 @@
     "target": "ESNext",
     "useDefineForClassFields": true,
     "module": "ESNext",
-    "lib": ["ESNext", "DOM","scripthost","ES2015"],
+    "lib": ["ESNext", "DOM","scripthost"],
     "moduleResolution": "Node",
     "strict": true,
     "sourceMap": true,

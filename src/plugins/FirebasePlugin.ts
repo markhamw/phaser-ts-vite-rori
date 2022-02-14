@@ -1,6 +1,6 @@
 import Phaser from 'phaser'
 import { getFirestore, Firestore, DocumentSnapshot, getDoc } from 'firebase/firestore'
-import { onAuthStateChanged, Unsubscribe } from 'firebase/auth'
+import { onAuthStateChanged, Unsubscribe, GoogleAuthProvider } from 'firebase/auth'
 import { initializeApp } from 'firebase/app'
 //import { getAnalytics } from 'firebase/analytics';
 import { setDoc, doc } from 'firebase/firestore';
@@ -9,7 +9,8 @@ import {
     createUserWithEmailAndPassword,
     Auth,
     signInWithEmailAndPassword,
-    signInAnonymously
+    signInAnonymously,
+    signInWithPopup
 } from 'firebase/auth';
 
 const firebaseConfig = {
@@ -30,12 +31,15 @@ export default class FirebasePlugin extends Phaser.Plugins.BasePlugin {
     private readonly auth: Auth
     private authStateChangedUnsubscribe: Unsubscribe
     private onLoggedInCallback?: () => void;
+    private googleProvider: GoogleAuthProvider;
+
     constructor(manager: Phaser.Plugins.PluginManager) {
         super(manager);
 
         const app = initializeApp(firebaseConfig);
         this.db = getFirestore(app);
         this.auth = getAuth(app);
+        this.googleProvider = new GoogleAuthProvider();
 
         this.authStateChangedUnsubscribe = onAuthStateChanged(this.auth, (user) => {
             if (user && this.onLoggedInCallback) {
@@ -43,7 +47,7 @@ export default class FirebasePlugin extends Phaser.Plugins.BasePlugin {
                 this.onLoggedInCallback()
             }
         })
-      //  let analytics = getAnalytics(app);
+        //  let analytics = getAnalytics(app);
 
     }
 
@@ -58,13 +62,28 @@ export default class FirebasePlugin extends Phaser.Plugins.BasePlugin {
     }
 
 
-    async saveGameDate(userId: string, data: { name: string, score: number }) {
+    async saveGameDate(userId: string, data: {
+        displayName: string,
+        name: string,
+        isLevel1Complete: boolean, 
+        visits: number, 
+        HP: number, 
+        MP: number, 
+        gold: number
+    }) {
         await setDoc(doc(this.db, `game-data`, userId), data)
     }
 
 
     async loadGameData(userId: string) {
-        const snap = await getDoc(doc(this.db, `game-data`, userId)) as DocumentSnapshot<{ name: string, score: number }>
+        const snap = await getDoc(doc(this.db, `game-data`, userId)) as DocumentSnapshot<{   
+            name: string,
+            displayName: string,
+            isLevel1Complete: boolean, 
+            visits: number, 
+            HP: number, 
+            MP: number, 
+            gold: number }>
         return snap.data()
 
     }
@@ -85,6 +104,11 @@ export default class FirebasePlugin extends Phaser.Plugins.BasePlugin {
         const credentials = await signInAnonymously(this.auth)
         return credentials.user
 
+    }
+
+    async signInWithPopup() {
+        const credentials = await signInWithPopup(this.auth, this.googleProvider)
+        return credentials.user
     }
     getUser() {
         return this.auth.currentUser
